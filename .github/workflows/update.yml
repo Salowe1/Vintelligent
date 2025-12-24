@@ -1,33 +1,29 @@
-name: OSINT Automation
+name: Africa Strategic Intel
 
 on:
   schedule:
-    - cron: '0 8 * * *' # S'exécute chaque jour à 8h00 UTC
-  workflow_dispatch: # Permet de cliquer sur un bouton pour mettre à jour manuellement
+    - cron: '0 6 * * *' # Every day at 6 AM
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write # Autorise le robot à modifier data.json
     steps:
       - uses: actions/checkout@v3
-
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
-
+          python-version: '3.10'
       - name: Install dependencies
-        run: pip install feedparser
-
-      - name: Run Scraper
+        run: pip install feedparser haystack-ai google-ai-studio-haystack
+      - name: Run Intelligence Pipeline
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: python veille.py
-
-      - name: Commit data
+      - name: Commit & Push Results
         run: |
-          git config --global user.name "Intelligence-Bot"
+          git config --global user.name "AI-Intelligence-Bot"
           git config --global user.email "bot@github.com"
           git add data.json
-          git commit -m "Auto-update news: $(date)" || exit 0
+          git commit -m "Strategic Update: $(date)" || exit 0
           git push
