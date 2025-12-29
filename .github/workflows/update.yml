@@ -29,7 +29,6 @@ jobs:
 
       - name: Execute Intelligence Engine
         env:
-          # Ensure this secret is set in your GitHub Repo Settings
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: python veille.py
 
