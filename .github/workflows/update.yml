@@ -1,52 +1,50 @@
-name: Vintelligent Africa Hybrid Engine
+name: Vintelligent Hybrid Engine
 
 on:
   schedule:
-    - cron: '0 6 * * *'
+    - cron: '0 8 * * *' # Runs daily at 8:00 AM
   workflow_dispatch:
 
 jobs:
-  build:
+  process:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      # STEP 1: SETUP R
+      # --- R SETUP ---
       - name: Setup R
         uses: r-lib/actions/setup-r@v2
-      
-      - name: Install R Dependencies
-        run: |
-          Rscript -e 'install.packages(c("rvest", "jsonlite"))'
 
-      # STEP 2: SETUP PYTHON
+      - name: Install Linux Libraries for R
+        run: sudo apt-get install -y libxml2-dev libcurl4-openssl-dev libssl-dev
+
+      - name: Install R Packages
+        run: Rscript -e 'install.packages(c("rvest", "jsonlite"), repos="https://cloud.r-project.org")'
+
+      # --- PYTHON SETUP ---
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install Python Tooling
-        run: |
-          pip uninstall google google-generativeai -y
-          pip install requests feedparser google-genai
+      - name: Install Python Libs
+        run: pip install google-genai feedparser
 
-      # STEP 3: RUN HYBRID PIPELINE
+      # --- EXECUTION ---
       - name: Run R Scraper
         run: Rscript analysis.R
 
-      - name: Run Python AI Engine
+      - name: Run Python AI
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: python veille.py
 
-      # STEP 4: PUBLISH
-      - name: Publish Official Data
+      # --- COMMIT ---
+      - name: Push results
         run: |
           git config --global user.name "Vintelligent-Bot"
           git config --global user.email "bot@vintelligent.africa"
           git add data.json
-          git commit -m "HYBRID SYNC: $(date +'%d-%m-%Y')" || exit 0
+          git commit -m "Hybrid Update: $(date)" || exit 0
           git push
