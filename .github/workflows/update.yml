@@ -2,16 +2,16 @@ name: Vintelligent Africa
 
 on:
   schedule:
-    - cron: '0 6 * * *'
+    - cron: '0 6 * * *' # Every morning at 6AM
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Crucial for pushing data.json
+      contents: write
     steps:
-      - name: Checkout
+      - name: Checkout Code
         uses: actions/checkout@v3
 
       - name: Setup Python
@@ -19,18 +19,18 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install Dependencies
-        run: pip install feedparser requests beautifulsoup4
+      - name: Install Official Tooling
+        run: pip install requests beautifulsoup4 feedparser google-generativeai
 
-      - name: Run Script
+      - name: Execute Intelligence Engine
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: python veille.py
 
-      - name: Commit and Push
+      - name: Publish Official Data
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "Vintelligent-Bot"
+          git config --global user.email "bot@vintelligent.africa"
           git add data.json
-          git commit -m "Update data" || echo "No changes to commit"
+          git commit -m "OFFICIAL UPDATE: $(date +'%d-%m-%Y')" || exit 0
           git push
