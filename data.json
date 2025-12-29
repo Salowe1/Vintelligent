@@ -1,53 +1,47 @@
 {
+    "bourse": {
+        "titre": "BRVM",
+        "prix": "--",
+        "variation": "0%",
+        "maj": "Sync...",
+        "conseil": "Analyse indisponible."
+    },
     "articles": [
         {
+            "titre": "Canal de Suez : l’Égypte et le Japon concluent un accord de 22 millions de dollars pour un navire de sauvetage",
+            "lien": "https://www.financialafrik.com/2025/12/29/canal-de-suez-legypte-et-le-japon-concluent-un-accord-de-22-millions-de-dollars-pour-un-navire-de-sauvetage/",
+            "source": "Financial Afrik",
+            "date": "29/12/2025"
+        },
+        {
+            "titre": "Budget 2026 au Burkina: Des recettes de 3431 milliards FCFA attendues pour des dépenses estimées à plus de 3918 milliards FCFA",
+            "lien": "https://www.financialafrik.com/2025/12/29/budget-2026-au-burkina-des-recettes-de-3431-milliards-fcfa-attendues-pour-des-depenses-estimees-a-plus-de-3918-milliards-fcfa/",
+            "source": "Financial Afrik",
+            "date": "29/12/2025"
+        },
+        {
+            "titre": "CEMAC : l’inflation retombe sous le seuil communautaire au troisième trimestre 2025",
+            "lien": "https://www.financialafrik.com/2025/12/29/cemac-linflation-retombe-sous-le-seuil-communautaire-au-troisieme-trimestre-2025/",
+            "source": "Financial Afrik",
+            "date": "29/12/2025"
+        },
+        {
+            "titre": "Nigeria : la Banque centrale lève 10,5 milliards USD sur les bons du Trésor en 2025",
+            "lien": "https://www.financialafrik.com/2025/12/29/nigeria-la-banque-centrale-leve-105-milliards-usd-sur-les-bons-du-tresor-en-2025/",
+            "source": "Financial Afrik",
+            "date": "29/12/2025"
+        },
+        {
+            "titre": "RDC : les indemnisations d’assurance bondissent à 58 millions USD en 2024",
+            "lien": "https://www.financialafrik.com/2025/12/29/rdc-les-indemnisations-dassurance-bondissent-a-58-millions-usd-en-2024/",
+            "source": "Financial Afrik",
+            "date": "29/12/2025"
+        },
+        {
             "titre": "Le sud-africain Aspen Pharmacare cède ses activités clés en Asie-Pacifique pour 1,6 milliard de dollars",
-            "resume": "<a href=\"https://www.financialafrik.com/2025/12/29/le-sud-africain-aspen-pharmacare-cede-ses-activites-cles-en-asie-pacifique-pour-16-milliard-de-doll...",
             "lien": "https://www.financialafrik.com/2025/12/29/le-sud-africain-aspen-pharmacare-cede-ses-activites-cles-en-asie-pacifique-pour-16-milliard-de-dollars/",
-            "source": "FINANCE",
-            "date": "29/12/2025"
-        },
-        {
-            "titre": "BEAC : des recettes en hausse à 1,05 milliard USD en 2026",
-            "resume": "<a href=\"https://www.financialafrik.com/2025/12/29/beac-des-recettes-en-hausse-a-105-milliard-usd-en-2026/\"><img align=\"center\" alt=\"BEAC : des recett...",
-            "lien": "https://www.financialafrik.com/2025/12/29/beac-des-recettes-en-hausse-a-105-milliard-usd-en-2026/",
-            "source": "FINANCE",
-            "date": "29/12/2025"
-        },
-        {
-            "titre": "Le groupe émirati Axis réclame 29 milliards USD à la Guinée après la perte de sa licence",
-            "resume": "<a href=\"https://www.financialafrik.com/2025/12/29/le-groupe-emirati-axis-reclame-29-milliards-usd-a-la-guinee-apres-la-perte-de-sa-licence/\"><img ali...",
-            "lien": "https://www.financialafrik.com/2025/12/29/le-groupe-emirati-axis-reclame-29-milliards-usd-a-la-guinee-apres-la-perte-de-sa-licence/",
-            "source": "FINANCE",
-            "date": "29/12/2025"
-        },
-        {
-            "titre": "L’Égypte relance ses sukuks avec une émission de 105 millions USD",
-            "resume": "<a href=\"https://www.financialafrik.com/2025/12/29/legypte-relance-ses-sukuks-avec-une-emission-de-105-millions-usd/\"><img align=\"center\" alt=\"L’Égypt...",
-            "lien": "https://www.financialafrik.com/2025/12/29/legypte-relance-ses-sukuks-avec-une-emission-de-105-millions-usd/",
-            "source": "FINANCE",
-            "date": "29/12/2025"
-        },
-        {
-            "titre": "Le Niger réaffirme sa souveraineté sur l’uranium de la Somaïr",
-            "resume": "<a href=\"https://www.financialafrik.com/2025/12/29/le-niger-reaffirme-sa-souverainete-sur-luranium-de-la-somair/\"><img align=\"center\" alt=\"Le Niger ré...",
-            "lien": "https://www.financialafrik.com/2025/12/29/le-niger-reaffirme-sa-souverainete-sur-luranium-de-la-somair/",
-            "source": "FINANCE",
-            "date": "29/12/2025"
-        },
-        {
-            "titre": "Le relèvement du capital bancaire en CEMAC : un risque majeur de consolidation",
-            "resume": "<a href=\"https://www.financialafrik.com/2025/12/29/le-relevement-du-capital-bancaire-en-cemac-un-risque-majeur-de-consolidation/\"><img align=\"center\" ...",
-            "lien": "https://www.financialafrik.com/2025/12/29/le-relevement-du-capital-bancaire-en-cemac-un-risque-majeur-de-consolidation/",
-            "source": "FINANCE",
+            "source": "Financial Afrik",
             "date": "29/12/2025"
         }
-    ],
-    "bourse": {
-        "titre": "SONATEL SN",
-        "prix": "19 450 FCFA",
-        "variation": "+1.2%",
-        "conseil": "Analyse en cours. Focus sur les valeurs refuges UEMOA.",
-        "maj": "29/12/2025"
-    }
+    ]
 }
