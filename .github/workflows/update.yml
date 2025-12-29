@@ -2,7 +2,7 @@ name: Vintelligent Hybrid Engine
 
 on:
   schedule:
-    - cron: '0 8 * * *' # Runs daily at 8:00 AM
+    - cron: '0 8 * * *'
   workflow_dispatch:
 
 jobs:
@@ -12,17 +12,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # --- R SETUP ---
       - name: Setup R
         uses: r-lib/actions/setup-r@v2
 
-      - name: Install Linux Libraries for R
+      - name: Install Linux Libraries
         run: sudo apt-get install -y libxml2-dev libcurl4-openssl-dev libssl-dev
 
       - name: Install R Packages
-        run: Rscript -e 'install.packages(c("rvest", "jsonlite"), repos="https://cloud.r-project.org")'
+        run: |
+          Rscript -e 'install.packages(c("rvest", "httr", "jsonlite"), repos="https://cloud.r-project.org")'
 
-      # --- PYTHON SETUP ---
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -31,7 +30,6 @@ jobs:
       - name: Install Python Libs
         run: pip install google-genai feedparser
 
-      # --- EXECUTION ---
       - name: Run R Scraper
         run: Rscript analysis.R
 
@@ -40,7 +38,6 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: python veille.py
 
-      # --- COMMIT ---
       - name: Push results
         run: |
           git config --global user.name "Vintelligent-Bot"
