@@ -4,40 +4,57 @@ import time
 import requests
 import feedparser
 from bs4 import BeautifulSoup
-import google.generativeai as genai
+from google import genai  # New library
 
 # --- CONFIGURATION GEMINI ---
-genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
-model = genai.GenerativeModel('gemini-1.5-flash')
+# The client automatically looks for GOOGLE_API_KEY in environment variables
+client = genai.Client(api_key=os.environ.get("GOOGLE_API_KEY"))
 
 def get_official_brvm_data():
-    """Extraction directe des données officielles BRVM"""
-    url = "https://www.sikafinance.com/marches/cotations"
+    """Fetches official live market data from BRVM.org"""
+    url = "https://www.brvm.org/fr/cours-actions/0"
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
     
     response = requests.get(url, headers=headers, timeout=20)
     response.raise_for_status() 
     
     soup = BeautifulSoup(response.text, 'html.parser')
-    table = soup.find('table')
-    # Extraction de la première ligne de cotation (Top Gainer)
-    top_row = table.find_all('tr')[1] 
-    cols = top_row.find_all('td')
     
-    stock_data = {
-        "titre": cols[0].text.strip(),
-        "prix": cols[1].text.strip() + " FCFA",
-        "variation": cols[2].text.strip(),
-        "maj": time.strftime("%d/%m/%Y %H:%M")
-    }
-    
-    # Analyse IA en temps réel
+    # Locate the table row with the most active or first stock
+    # Note: BRVM table structure uses specific classes
     try:
-        prompt = f"Analyse cette performance boursière UEMOA : {stock_data['titre']} à {stock_data['variation']}. Donne un conseil stratégique de 2 phrases maximum."
-        ai_response = model.generate_content(prompt)
-        stock_data["conseil"] = ai_response.text.strip().replace('"', '')
-    except:
-        stock_data["conseil"] = "Titre en forte progression. Analyse technique recommandée pour confirmer le point d'entrée."
+        table = soup.find('table', {'class': 'views-table'})
+        top_row = table.find('tbody').find('tr')
+        cols = top_row.find_all('td')
+        
+        stock_data = {
+            "titre": cols[1].text.strip(), # Name
+            "prix": cols[3].text.strip() + " FCFA", # Last price
+            "variation": cols[8].text.strip(), # Change %
+            "maj": time.strftime("%d/%m/%Y %H:%M")
+        }
+    except Exception as e:
+        print(f"Extraction error: {e}")
+        # Return a 'Service Unavailable' dict rather than crashing everything
+        return {
+            "titre": "Marché BRVM",
+            "prix": "--",
+            "variation": "0.0%",
+            "conseil": "Données en cours de synchronisation avec la place boursière.",
+            "maj": time.strftime("%d/%m/%Y")
+        }
+    
+    # AI Analysis with the new SDK
+    try:
+        prompt = f"Analyse cette performance boursière : {stock_data['titre']} à {stock_data['variation']}. Donne un conseil très court (15 mots max) pour un investisseur."
+        response = client.models.generate_content(
+            model="gemini-2.0-flash", 
+            contents=prompt
+        )
+        stock_data["conseil"] = response.text.strip()
+    except Exception as e:
+        print(f"AI Error: {e}")
+        stock_data["conseil"] = "Analyse indisponible pour le moment."
     
     return stock_data
 
@@ -47,22 +64,22 @@ def collect_intelligence():
     # 1. Bourse
     bourse = get_official_brvm_data()
     
-    # 2. Flux RSS (Financial Afrik)
+    # 2. News
     news_feed = feedparser.parse("https://www.financialafrik.com/feed/")
     articles = []
     for entry in news_feed.entries[:6]:
         articles.append({
             "titre": entry.title,
-            "resume": entry.summary[:180] + "..." if hasattr(entry, 'summary') else "",
+            "resume": entry.summary[:150] + "..." if hasattr(entry, 'summary') else "",
             "lien": entry.link,
             "source": "Financial Afrik",
             "date": time.strftime("%d/%m/%Y")
         })
 
-    # 3. Export JSON
+    # 3. Export
     with open("data.json", "w", encoding="utf-8") as f:
         json.dump({"articles": articles, "bourse": bourse}, f, ensure_ascii=False, indent=4)
-    print("data.json mis à jour avec succès.")
+    print("Mise à jour terminée.")
 
 if __name__ == "__main__":
     collect_intelligence()
