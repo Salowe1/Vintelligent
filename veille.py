@@ -4,7 +4,9 @@ import time
 import requests
 import feedparser
 from bs4 import BeautifulSoup
-from google import genai  # New library
+# The canonical way to import the new SDK
+from google import genai 
+from google.genai import types
 
 # --- CONFIGURATION GEMINI ---
 # The client automatically looks for GOOGLE_API_KEY in environment variables
