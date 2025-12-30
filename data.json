@@ -1,53 +1,53 @@
 {
     "bourse": {
-        "titre": "BRVM Composite",
-        "prix": "--",
+        "titre": "BRVM",
+        "prix": "---",
         "variation": "0%",
-        "maj": "Sync...",
-        "conseil": "Analyse indisponible."
+        "conseil": "Analyse des flux financiers en cours. Prudence recommandée.",
+        "maj": "30/12/2025 00:46"
     },
     "articles": [
+        {
+            "titre": "Le cas Marcel Desailly,  révélateur du sort  des investissements de la diaspora africaine",
+            "lien": "https://www.financialafrik.com/2025/12/29/le-cas-marcel-desailly-revelateur-du-sort-des-investissements-de-la-diaspora-africaine/",
+            "source": "Financial Afrik",
+            "date": "30/12/2025",
+            "resume": "<a href=\"https://www.financialafrik.com/2025/12/29/le-cas-marcel-desailly-revelateur-du-sort-des-investissements-de-la-diaspora-africaine/\"><img align..."
+        },
+        {
+            "titre": "Présidentielle en Guinée : forte mobilisation et scrutin apaisé sans incident majeur",
+            "lien": "https://www.financialafrik.com/2025/12/29/presidentielle-en-guinee-forte-mobilisation-et-scrutin-apaise-sans-incident-majeur/",
+            "source": "Financial Afrik",
+            "date": "30/12/2025",
+            "resume": "<a href=\"https://www.financialafrik.com/2025/12/29/presidentielle-en-guinee-forte-mobilisation-et-scrutin-apaise-sans-incident-majeur/\"><img align=\"ce..."
+        },
         {
             "titre": "Canal de Suez : l’Égypte et le Japon concluent un accord de 22 millions de dollars pour un navire de sauvetage",
             "lien": "https://www.financialafrik.com/2025/12/29/canal-de-suez-legypte-et-le-japon-concluent-un-accord-de-22-millions-de-dollars-pour-un-navire-de-sauvetage/",
             "source": "Financial Afrik",
-            "date": "29/12/2025",
+            "date": "30/12/2025",
             "resume": "<a href=\"https://www.financialafrik.com/2025/12/29/canal-de-suez-legypte-et-le-japon-concluent-un-accord-de-22-millions-de-dollars-pour-un-navire-de-s..."
         },
         {
             "titre": "Budget 2026 au Burkina: Des recettes de 3431 milliards FCFA attendues pour des dépenses estimées à plus de 3918 milliards FCFA",
             "lien": "https://www.financialafrik.com/2025/12/29/budget-2026-au-burkina-des-recettes-de-3431-milliards-fcfa-attendues-pour-des-depenses-estimees-a-plus-de-3918-milliards-fcfa/",
             "source": "Financial Afrik",
-            "date": "29/12/2025",
+            "date": "30/12/2025",
             "resume": "<a href=\"https://www.financialafrik.com/2025/12/29/budget-2026-au-burkina-des-recettes-de-3431-milliards-fcfa-attendues-pour-des-depenses-estimees-a-p..."
         },
         {
             "titre": "CEMAC : l’inflation retombe sous le seuil communautaire au troisième trimestre 2025",
             "lien": "https://www.financialafrik.com/2025/12/29/cemac-linflation-retombe-sous-le-seuil-communautaire-au-troisieme-trimestre-2025/",
             "source": "Financial Afrik",
-            "date": "29/12/2025",
+            "date": "30/12/2025",
             "resume": "<a href=\"https://www.financialafrik.com/2025/12/29/cemac-linflation-retombe-sous-le-seuil-communautaire-au-troisieme-trimestre-2025/\"><img align=\"cent..."
         },
         {
             "titre": "Nigeria : la Banque centrale lève 10,5 milliards USD sur les bons du Trésor en 2025",
             "lien": "https://www.financialafrik.com/2025/12/29/nigeria-la-banque-centrale-leve-105-milliards-usd-sur-les-bons-du-tresor-en-2025/",
             "source": "Financial Afrik",
-            "date": "29/12/2025",
+            "date": "30/12/2025",
             "resume": "<a href=\"https://www.financialafrik.com/2025/12/29/nigeria-la-banque-centrale-leve-105-milliards-usd-sur-les-bons-du-tresor-en-2025/\"><img align=\"cent..."
-        },
-        {
-            "titre": "RDC : les indemnisations d’assurance bondissent à 58 millions USD en 2024",
-            "lien": "https://www.financialafrik.com/2025/12/29/rdc-les-indemnisations-dassurance-bondissent-a-58-millions-usd-en-2024/",
-            "source": "Financial Afrik",
-            "date": "29/12/2025",
-            "resume": "<a href=\"https://www.financialafrik.com/2025/12/29/rdc-les-indemnisations-dassurance-bondissent-a-58-millions-usd-en-2024/\"><img align=\"center\" alt=\"R..."
-        },
-        {
-            "titre": "Le sud-africain Aspen Pharmacare cède ses activités clés en Asie-Pacifique pour 1,6 milliard de dollars",
-            "lien": "https://www.financialafrik.com/2025/12/29/le-sud-africain-aspen-pharmacare-cede-ses-activites-cles-en-asie-pacifique-pour-16-milliard-de-dollars/",
-            "source": "Financial Afrik",
-            "date": "29/12/2025",
-            "resume": "<a href=\"https://www.financialafrik.com/2025/12/29/le-sud-africain-aspen-pharmacare-cede-ses-activites-cles-en-asie-pacifique-pour-16-milliard-de-doll..."
         }
     ]
 }
