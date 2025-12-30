@@ -7,56 +7,51 @@ from google import genai
 client = genai.Client(api_key=os.environ.get("GOOGLE_API_KEY"))
 
 def collect_intelligence():
-    # 1. Load data from R with fallback
-    brvm_data = {"titre": "BRVM Marché", "prix": "---", "variation": "0.00%", "status": "error"}
-    
+    # Load R results or use fallback
     if os.path.exists("temp_brvm.json"):
-        try:
-            with open("temp_brvm.json", "r", encoding="utf-8") as f:
-                temp = json.load(f)
-                if temp.get("status") == "success":
-                    brvm_data = temp
-        except Exception as e:
-            print(f"Error reading R output: {e}")
+        with open("temp_brvm.json", "r", encoding="utf-8") as f:
+            brvm_data = json.load(f)
+    else:
+        brvm_data = {"status": "error", "titre": "Marché BRVM", "variation": "0%", "prix": "---"}
 
-    # 2. AI Analysis
+    # Gemini Analysis
     try:
-        if brvm_data["status"] == "success":
-            prompt = f"Analyse {brvm_data['titre']} ({brvm_data['variation']}). Donne un conseil d'expert boursier en 10 mots maximum."
+        if brvm_data.get("status") == "success":
+            prompt = f"Explique pourquoi l'action {brvm_data['titre']} a varié de {brvm_data['variation']} et donne un conseil pro en 10 mots."
         else:
-            prompt = "Donne un conseil général sur l'investissement en zone UEMOA en 10 mots."
+            prompt = "Donne une brève tendance actuelle sur la bourse BRVM WAEMU en 10 mots."
             
         ai_msg = client.models.generate_content(model="gemini-2.0-flash", contents=prompt)
         conseil = ai_msg.text.strip()
     except:
-        conseil = "Analyse technique recommandée pour confirmer la tendance."
+        conseil = "Analyse des flux financiers en cours. Prudence recommandée."
 
-    # 3. Finalize Bourse Data
-    bourse_final = {
-        "titre": brvm_data.get("titre"),
-        "prix": brvm_data.get("prix"),
-        "variation": brvm_data.get("variation"),
-        "conseil": conseil,
-        "maj": time.strftime("%d/%m/%Y %H:%M")
+    # Final JSON structure
+    final_output = {
+        "bourse": {
+            "titre": brvm_data.get("titre", "BRVM"),
+            "prix": brvm_data.get("prix", "---"),
+            "variation": brvm_data.get("variation", "0%"),
+            "conseil": conseil,
+            "maj": time.strftime("%d/%m/%Y %H:%M")
+        },
+        "articles": []
     }
 
-    # 4. News Feed
-    articles = []
+    # RSS Feed Parsing
     try:
         feed = feedparser.parse("https://www.financialafrik.com/feed/")
         for entry in feed.entries[:6]:
-            articles.append({
+            final_output["articles"].append({
                 "titre": entry.title,
                 "lien": entry.link,
                 "source": "Financial Afrik",
                 "date": time.strftime("%d/%m/%Y"),
-                "resume": (entry.summary[:150] + "...") if 'summary' in entry else "Analyse financière disponible."
+                "resume": entry.summary[:150] + "..." if 'summary' in entry else "Cliquez pour lire l'article."
             })
     except:
-        articles = [{"titre": "Flux indisponible", "source": "Système", "date": "--", "resume": "Erreur de connexion RSS"}]
+        pass
 
-    # 5. Output
-    final_output = {"bourse": bourse_final, "articles": articles}
     with open("data.json", "w", encoding="utf-8") as f:
         json.dump(final_output, f, ensure_ascii=False, indent=4)
 
