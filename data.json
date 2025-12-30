@@ -4,9 +4,23 @@
         "prix": "---",
         "variation": "0%",
         "conseil": "Analyse des flux financiers en cours. Prudence recommandée.",
-        "maj": "30/12/2025 00:46"
+        "maj": "30/12/2025 08:40"
     },
     "articles": [
+        {
+            "titre": "En RDC, les avoirs des banques commerciales atteignent près de 1,3 milliard USD",
+            "lien": "https://www.financialafrik.com/2025/12/30/en-rdc-les-avoirs-des-banques-commerciales-atteignent-pres-de-13-milliard-usd/",
+            "source": "Financial Afrik",
+            "date": "30/12/2025",
+            "resume": "<p>Ce contenu est réservé aux membres. Visitez le site et connectez-vous ou bien adhérez pour le lire.</p>\n<p><a href=\"https://www.financialafrik.com/..."
+        },
+        {
+            "titre": "CEMAC : 11 milliards USD de réserves de change à fin octobre 2025",
+            "lien": "https://www.financialafrik.com/2025/12/30/cemac-11-milliards-usd-de-reserves-de-change-a-fin-octobre-2025/",
+            "source": "Financial Afrik",
+            "date": "30/12/2025",
+            "resume": "<a href=\"https://www.financialafrik.com/2025/12/30/cemac-11-milliards-usd-de-reserves-de-change-a-fin-octobre-2025/\"><img align=\"center\" alt=\"CEMAC : ..."
+        },
         {
             "titre": "Le cas Marcel Desailly,  révélateur du sort  des investissements de la diaspora africaine",
             "lien": "https://www.financialafrik.com/2025/12/29/le-cas-marcel-desailly-revelateur-du-sort-des-investissements-de-la-diaspora-africaine/",
@@ -34,20 +48,6 @@
             "source": "Financial Afrik",
             "date": "30/12/2025",
             "resume": "<a href=\"https://www.financialafrik.com/2025/12/29/budget-2026-au-burkina-des-recettes-de-3431-milliards-fcfa-attendues-pour-des-depenses-estimees-a-p..."
-        },
-        {
-            "titre": "CEMAC : l’inflation retombe sous le seuil communautaire au troisième trimestre 2025",
-            "lien": "https://www.financialafrik.com/2025/12/29/cemac-linflation-retombe-sous-le-seuil-communautaire-au-troisieme-trimestre-2025/",
-            "source": "Financial Afrik",
-            "date": "30/12/2025",
-            "resume": "<a href=\"https://www.financialafrik.com/2025/12/29/cemac-linflation-retombe-sous-le-seuil-communautaire-au-troisieme-trimestre-2025/\"><img align=\"cent..."
-        },
-        {
-            "titre": "Nigeria : la Banque centrale lève 10,5 milliards USD sur les bons du Trésor en 2025",
-            "lien": "https://www.financialafrik.com/2025/12/29/nigeria-la-banque-centrale-leve-105-milliards-usd-sur-les-bons-du-tresor-en-2025/",
-            "source": "Financial Afrik",
-            "date": "30/12/2025",
-            "resume": "<a href=\"https://www.financialafrik.com/2025/12/29/nigeria-la-banque-centrale-leve-105-milliards-usd-sur-les-bons-du-tresor-en-2025/\"><img align=\"cent..."
         }
     ]
 }
