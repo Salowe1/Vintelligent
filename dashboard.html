@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vintelligent Africa | Intelligence Stratégique & SID</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/recharts/umd/Recharts.min.js"></script>
+  <script src="https://unpkg.com/lucide-react/dist/umd/lucide-react.js"></script>
+
+  <style>
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0b0f1a; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+  </style>
+</head>
+
+<body class="bg-[#0b0f1a] text-slate-100 font-sans leading-relaxed">
+  <!-- --- NAV, HEADER, SECTIONS REMAIN THE SAME ABOVE --- -->
+
+  <main class="pt-48 pb-12 max-w-7xl mx-auto px-6">
+    <!-- Other sections unchanged -->
+
+    <section id="invest" class="py-24 border-t border-white/5 bg-gradient-to-b from-transparent to-emerald-900/5 rounded-[3rem] px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="text-emerald-400 font-bold tracking-[0.2em] text-[10px] uppercase">Opportunités Stratégiques</span>
+        <h2 class="text-4xl font-black mt-6 mb-8">Vintelligent Africa <span class="text-emerald-500">Investment</span></h2>
+
+        <button id="open-dashboard" 
+          class="mt-10 px-10 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-2xl shadow-2xl shadow-emerald-900/40 transition-all transform hover:-translate-y-1">
+          Accéder au Tableau de Bord Économique
+        </button>
+      </div>
+    </section>
+
+    <!-- Dashboard container (hidden by default) -->
+    <section id="dashboard-section" class="hidden py-20">
+      <div id="dashboard-root" class="bg-white rounded-3xl p-10"></div>
+      <div class="text-center mt-10">
+        <button id="close-dashboard" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-sm font-bold">Fermer le Tableau de Bord</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-900 bg-[#070a13] py-20 px-6">
+    <!-- Footer unchanged -->
+  </footer>
+
+  <!-- React + Dashboard Script -->
+  <script type="text/babel">
+    const { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } = Recharts;
+    const { Landmark, Globe, Briefcase, Users, ArrowUpRight, ArrowDownRight, Layout } = lucideReact;
+
+    const mockChartData = [
+      { name: '2019', gdp: 3.5, fdi: 45 },
+      { name: '2020', gdp: -2.1, fdi: 38 },
+      { name: '2021', gdp: 4.8, fdi: 42 },
+      { name: '2022', gdp: 4.1, fdi: 47 },
+      { name: '2023', gdp: 3.8, fdi: 51 },
+      { name: '2024E', gdp: 4.2, fdi: 54 },
+    ];
+
+    const StatCard = ({ title, value, change, icon: Icon, isPositive }) => (
+      <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 group hover:border-emerald-200 transition-all">
+        <div className="flex items-center justify-between mb-4">
+          <div className="p-2 bg-slate-50 rounded-xl group-hover:bg-emerald-50 transition-colors">
+            <Icon className="text-emerald-600" size={20} />
+          </div>
+          <div className={`flex items-center text-sm font-bold ${isPositive ? 'text-emerald-600' : 'text-red-600'}`}>
+            {change}
+            {isPositive ? <ArrowUpRight size={16} /> : <ArrowDownRight size={16} />}
+          </div>
+        </div>
+        <h3 className="text-slate-500 text-xs font-bold uppercase tracking-widest">{title}</h3>
+        <p className="text-3xl font-black text-slate-800 mt-1 tracking-tight">{value}</p>
+      </div>
+    );
+
+    const DashboardView = () => (
+      <div className="space-y-8 animate-in fade-in duration-500">
+        <header className="flex justify-between items-end">
+          <div>
+            <h2 className="text-3xl font-black text-slate-900 tracking-tight">Market Pulse</h2>
+            <p className="text-slate-500 font-medium">Monitoring Économique 360° en Afrique.</p>
+          </div>
+          <div className="hidden lg:flex space-x-2">
+            <span className="px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600">EMEA HUB</span>
+            <span className="px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600">SUBSAHARAN HUB</span>
+          </div>
+        </header>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <StatCard title="Croissance PIB" value="4.2%" change="+0.4%" icon={Landmark} isPositive={true} />
+          <StatCard title="Flux d’IDE" value="$54.2B" change="+12%" icon={Globe} isPositive={true} />
+          <StatCard title="Projets Actifs" value="1 284" change="-2.1%" icon={Briefcase} isPositive={false} />
+          <StatCard title="Indice Consommateur" value="102.4" change="+5.2%" icon={Users} isPositive={true} />
+        </div>
+
+        <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 mt-10">
+          <h3 className="text-lg font-black text-slate-800 mb-8 uppercase tracking-widest flex items-center">
+            Dynamique de Croissance <span className="ml-2 px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[10px] rounded">EN TEMPS RÉEL</span>
+          </h3>
+          <div className="h-80">
+            <ResponsiveContainer width="100%" height="100%">
+              <AreaChart data={mockChartData}>
+                <defs>
+                  <linearGradient id="colorGdp" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#10b981" stopOpacity={0.1}/>
+                    <stop offset="95%" stopColor="#10b981" stopOpacity={0}/>
+                  </linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 11, fontWeight: 600}} />
+                <YAxis axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 11}} />
+                <Tooltip contentStyle={{borderRadius: '16px', border: 'none', boxShadow: '0 10px 30px rgba(0,0,0,0.08)'}} />
+                <Area type="monotone" dataKey="gdp" stroke="#10b981" fillOpacity={1} fill="url(#colorGdp)" strokeWidth={4} />
+              </AreaChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+      </div>
+    );
+
+    // Button interaction logic
+    const openBtn = document.getElementById('open-dashboard');
+    const closeBtn = document.getElementById('close-dashboard');
+    const section = document.getElementById('dashboard-section');
+
+    openBtn.addEventListener('click', () => {
+      section.classList.remove('hidden');
+      ReactDOM.createRoot(document.getElementById('dashboard-root')).render(<DashboardView />);
+      section.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      section.classList.add('hidden');
+      document.getElementById('dashboard-root').innerHTML = '';
+    });
+  </script>
+</body>
+</html>
