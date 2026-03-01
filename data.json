@@ -4,50 +4,50 @@
         "prix": "---",
         "variation": "0%",
         "conseil": "Analyse des flux financiers en cours. Prudence recommandée.",
-        "maj": "28/02/2026 08:41"
+        "maj": "01/03/2026 08:43"
     },
     "articles": [
+        {
+            "titre": "Donald Trump annonce la mort du guide suprême iranien Ali Khamenei",
+            "lien": "https://www.financialafrik.com/2026/02/28/donald-trump-annonce-la-mort-du-guide-supreme-iranien-ali-khamenei/",
+            "source": "Financial Afrik",
+            "date": "01/03/2026",
+            "resume": "<a href=\"https://www.financialafrik.com/2026/02/28/donald-trump-annonce-la-mort-du-guide-supreme-iranien-ali-khamenei/\"><img align=\"center\" alt=\"Donal..."
+        },
+        {
+            "titre": "Guerre USA–Iran : fermeture du détroit d’Ormuz et risques d’envolée des cours du pétrole",
+            "lien": "https://www.financialafrik.com/2026/02/28/guerre-usa-iran-fermeture-du-detroit-dormuz-et-risques-denvolee-des-cours-du-petrole/",
+            "source": "Financial Afrik",
+            "date": "01/03/2026",
+            "resume": "<a href=\"https://www.financialafrik.com/2026/02/28/guerre-usa-iran-fermeture-du-detroit-dormuz-et-risques-denvolee-des-cours-du-petrole/\"><img align=\"..."
+        },
+        {
+            "titre": "Les USA et Israël attaquent l’Iran, qui riposte : l’économie mondiale bascule dans l’incertitude",
+            "lien": "https://www.financialafrik.com/2026/02/28/les-usa-et-israel-attaques-liran-leconomie-mondiale-plonge-dans-lincertitude/",
+            "source": "Financial Afrik",
+            "date": "01/03/2026",
+            "resume": "<a href=\"https://www.financialafrik.com/2026/02/28/les-usa-et-israel-attaques-liran-leconomie-mondiale-plonge-dans-lincertitude/\"><img align=\"center\" ..."
+        },
         {
             "titre": "Assigné par le Ghana devant le Tribunal international du droit de la mer, le Togo se prononce",
             "lien": "https://www.financialafrik.com/2026/02/27/assigne-par-le-ghana-devant-le-tribunal-international-du-droit-de-la-mer-le-togo-se-prononce/",
             "source": "Financial Afrik",
-            "date": "28/02/2026",
+            "date": "01/03/2026",
             "resume": "<a href=\"https://www.financialafrik.com/2026/02/27/assigne-par-le-ghana-devant-le-tribunal-international-du-droit-de-la-mer-le-togo-se-prononce/\"><img..."
         },
         {
             "titre": "Burkina Faso : vers le lancement d’un «Diaspora Bond» d’environ 366 millions d’euros pour financer le développement",
             "lien": "https://www.financialafrik.com/2026/02/27/burkina-faso-vers-le-lancement-dun-diaspora-bond-denviron-366-millions-deuros-pour-financer-le-developpement/",
             "source": "Financial Afrik",
-            "date": "28/02/2026",
+            "date": "01/03/2026",
             "resume": "<a href=\"https://www.financialafrik.com/2026/02/27/burkina-faso-vers-le-lancement-dun-diaspora-bond-denviron-366-millions-deuros-pour-financer-le-deve..."
         },
         {
             "titre": "RDC Kinshasa officialise la candidature de Juliana Lumumba à la francophonie (l’OIF)",
             "lien": "https://www.financialafrik.com/2026/02/27/rdc-kinshasa-officialise-la-candidature-de-juliana-lumumba-a-la-francophonie-loif/",
             "source": "Financial Afrik",
-            "date": "28/02/2026",
+            "date": "01/03/2026",
             "resume": "<a href=\"https://www.financialafrik.com/2026/02/27/rdc-kinshasa-officialise-la-candidature-de-juliana-lumumba-a-la-francophonie-loif/\"><img align=\"cen..."
-        },
-        {
-            "titre": "Zimbabwe : la banque centrale lance une nouvelle série de billets ZiG dès le 7 avril",
-            "lien": "https://www.financialafrik.com/2026/02/27/zimbabwe-la-banque-centrale-lance-une-nouvelle-serie-de-billets-zig-des-le-7-avril/",
-            "source": "Financial Afrik",
-            "date": "28/02/2026",
-            "resume": "<a href=\"https://www.financialafrik.com/2026/02/27/zimbabwe-la-banque-centrale-lance-une-nouvelle-serie-de-billets-zig-des-le-7-avril/\"><img align=\"ce..."
-        },
-        {
-            "titre": "Forte tension sur le marché financier de l’UEMOA (Débat)",
-            "lien": "https://www.financialafrik.com/2026/02/27/forte-tension-sur-le-marche-financier-de-luemoa-debat/",
-            "source": "Financial Afrik",
-            "date": "28/02/2026",
-            "resume": "<a href=\"https://www.financialafrik.com/2026/02/27/forte-tension-sur-le-marche-financier-de-luemoa-debat/\"><img align=\"center\" alt=\"Forte tension sur ..."
-        },
-        {
-            "titre": "Le Sénégal lève 108,785 milliards de FCFA sur le marché financier de l’UMOA",
-            "lien": "https://www.financialafrik.com/2026/02/27/le-senegal-leve-108785-milliards-de-fcfa-sur-le-marche-financier-de-lumoa/",
-            "source": "Financial Afrik",
-            "date": "28/02/2026",
-            "resume": "<a href=\"https://www.financialafrik.com/2026/02/27/le-senegal-leve-108785-milliards-de-fcfa-sur-le-marche-financier-de-lumoa/\"><img align=\"center\" alt..."
         }
     ]
 }
