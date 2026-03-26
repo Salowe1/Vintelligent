@@ -83,23 +83,26 @@
   </style>
 </head>
 <body class="bg-[#0b0f1a] text-slate-100 leading-relaxed">
+  
+<div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-2 px-4 text-center font-bold text-xs tracking-[0.2em] sticky top-0 z-[60] border-b border-white/10 animate__animated animate__fadeInDown">
+        <span id="countdown-text uppercase">COMPTE À REBOURS VERS 2026 : </span>
+        <span id="timer" class="text-emerald-400">Calcul en cours...</span>
+    </div>
 
 <!-- NAV -->
-<nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[#0b0f1a]/80 backdrop-blur-xl">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <div class="flex items-center gap-3">
-      <div class="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center">
-        <span class="text-emerald-400 font-black text-xs">VA</span>
-      </div>
-      <span class="syne font-black text-sm tracking-tight">Vintelligent<span class="text-emerald-400">Africa</span></span>
-    </div>
-    <div class="hidden md:flex items-center gap-8 text-xs font-semibold text-slate-400">
-      <a href="#invest" class="hover:text-emerald-400 transition-colors">Dashboard</a>
-      <a href="#leaders" class="hover:text-emerald-400 transition-colors">Leaders</a>
-      <a href="#" class="hover:text-emerald-400 transition-colors">Rapports</a>
-    </div>
-    <span class="tag tag-emerald">SID Live</span>
-  </div>
+<nav class="fixed top-8 w-full z-40 backdrop-blur-xl bg-[#0b0f1a]/80 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-blue-500 rounded-lg animate-pulse"></div>
+                <span class="text-2xl font-black tracking-tighter bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">Vintelligent-AFRICA</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                <a href="#veille" class="hover:text-blue-400 transition">Veille OSINT</a>
+                <a href="#architectures" class="hover:text-blue-400 transition">Solutions SID</a>
+                <a href="#invest" class="hover:text-blue-400 transition text-emerald-400">Investir</a>
+                <a href="mailto:contact@vintelligent.africa" class="px-5 py-2 rounded-full border border-blue-500/30 text-blue-400 hover:bg-blue-500/10 transition">Accès Expert</a>
+            </div>
+        </div>
 </nav>
 
 <!-- HERO -->
