@@ -11,221 +11,579 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/recharts/umd/Recharts.min.js"></script>
   <script src="https://unpkg.com/lucide-react/dist/umd/lucide-react.js"></script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
-    ::-webkit-scrollbar { width: 8px; }
+    * { font-family: 'DM Sans', sans-serif; }
+    h1, h2, h3, .syne { font-family: 'Syne', sans-serif; }
+    ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #0b0f1a; }
     ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
-    ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+    ::-webkit-scrollbar-thumb:hover { background: #10b981; }
+
+    .hero-glow {
+      background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(16,185,129,0.18) 0%, transparent 70%);
+    }
+    .card-glass {
+      background: rgba(15,23,42,0.6);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .tag {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 3px 10px; border-radius: 99px; font-size: 10px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .tag-emerald { background: rgba(16,185,129,0.12); color: #10b981; border: 1px solid rgba(16,185,129,0.2); }
+    .tag-blue { background: rgba(59,130,246,0.12); color: #60a5fa; border: 1px solid rgba(59,130,246,0.2); }
+    .tag-amber { background: rgba(245,158,11,0.12); color: #fbbf24; border: 1px solid rgba(245,158,11,0.2); }
+    .tag-red { background: rgba(239,68,68,0.12); color: #f87171; border: 1px solid rgba(239,68,68,0.2); }
+    .tag-slate { background: rgba(100,116,139,0.12); color: #94a3b8; border: 1px solid rgba(100,116,139,0.2); }
+
+    .spinner {
+      width: 36px; height: 36px;
+      border: 3px solid rgba(16,185,129,0.15);
+      border-top-color: #10b981;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .fade-in { animation: fadeIn 0.5s ease forwards; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+    .leader-row {
+      display: grid;
+      grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 20px;
+      border-radius: 12px;
+      transition: background 0.15s;
+    }
+    .leader-row:hover { background: rgba(16,185,129,0.04); }
+    .leader-row-header {
+      display: grid;
+      grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+      gap: 12px;
+      padding: 10px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .leader-row, .leader-row-header {
+        grid-template-columns: 2fr 2fr 1fr;
+      }
+      .leader-row .hide-mobile, .leader-row-header .hide-mobile { display: none; }
+    }
   </style>
 </head>
+<body class="bg-[#0b0f1a] text-slate-100 leading-relaxed">
 
-<body class="bg-[#0b0f1a] text-slate-100 font-sans leading-relaxed">
-  <!-- --- NAV, HEADER, SECTIONS REMAIN THE SAME ABOVE --- -->
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[#0b0f1a]/80 backdrop-blur-xl">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center">
+        <span class="text-emerald-400 font-black text-xs">VA</span>
+      </div>
+      <span class="syne font-black text-sm tracking-tight">Vintelligent<span class="text-emerald-400">Africa</span></span>
+    </div>
+    <div class="hidden md:flex items-center gap-8 text-xs font-semibold text-slate-400">
+      <a href="#invest" class="hover:text-emerald-400 transition-colors">Dashboard</a>
+      <a href="#leaders" class="hover:text-emerald-400 transition-colors">Leaders</a>
+      <a href="#" class="hover:text-emerald-400 transition-colors">Rapports</a>
+    </div>
+    <span class="tag tag-emerald">SID Live</span>
+  </div>
+</nav>
 
-  <main class="pt-48 pb-12 max-w-7xl mx-auto px-6">
-    <!-- Other sections unchanged -->
+<!-- HERO -->
+<section class="hero-glow pt-40 pb-24 px-6 text-center">
+  <div class="max-w-4xl mx-auto">
+    <span class="tag tag-emerald mb-6">Intelligence Stratégique Africaine</span>
+    <h1 class="syne text-5xl md:text-7xl font-black leading-none tracking-tight mt-6 mb-6">
+      Le Pouls<br/><span class="text-emerald-400">de l'Afrique</span>
+    </h1>
+    <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-10 font-light">
+      Monitoring économique, politique et stratégique 360° — des données réelles pour des décisions éclairées.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <button id="open-dashboard"
+        class="px-8 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-2xl shadow-2xl shadow-emerald-900/40 transition-all transform hover:-translate-y-0.5 text-sm">
+        Tableau de Bord Économique
+      </button>
+      <button id="open-leaders"
+        class="px-8 py-3.5 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold rounded-2xl transition-all text-sm">
+        Dirigeants Africains →
+      </button>
+    </div>
+  </div>
+</section>
 
-    <section id="invest" class="py-24 border-t border-white/5 bg-gradient-to-b from-transparent to-emerald-900/5 rounded-[3rem] px-8">
-      <div class="max-w-4xl mx-auto text-center">
-        <span class="text-emerald-400 font-bold tracking-[0.2em] text-[10px] uppercase">Opportunités Stratégiques</span>
-        <h2 class="text-4xl font-black mt-6 mb-8">Vintelligent Africa <span class="text-emerald-500">Investment</span></h2>
+<!-- INVEST SECTION -->
+<main class="max-w-7xl mx-auto px-6 pb-24">
 
-        <button id="open-dashboard" 
-          class="mt-10 px-10 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-2xl shadow-2xl shadow-emerald-900/40 transition-all transform hover:-translate-y-1">
-          Accéder au Tableau de Bord Économique
+  <section id="invest" class="py-16">
+    <div class="max-w-4xl mx-auto text-center mb-10">
+      <span class="tag tag-blue">Opportunités Stratégiques</span>
+      <h2 class="syne text-4xl font-black mt-5 mb-4">Vintelligent Africa <span class="text-emerald-500">Investment</span></h2>
+      <p class="text-slate-400 text-sm max-w-xl mx-auto">Monitoring macro-économique en temps réel sur les marchés africains émergents.</p>
+    </div>
+
+    <!-- Dashboard section -->
+    <section id="dashboard-section" class="hidden py-4">
+      <div id="dashboard-root" class="rounded-3xl overflow-hidden"></div>
+      <div class="text-center mt-8">
+        <button id="close-dashboard" class="px-6 py-2.5 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-bold">
+          Fermer le Tableau de Bord
         </button>
       </div>
     </section>
 
-    <!-- Dashboard container (hidden by default) -->
-    <section id="dashboard-section" class="hidden py-20">
-      <div id="dashboard-root" class="bg-white rounded-3xl p-10"></div>
-      <div class="text-center mt-10">
-        <button id="close-dashboard" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-sm font-bold">Fermer le Tableau de Bord</button>
-      </div>
-    </section>
-  </main>
+    <div id="invest-cta" class="text-center">
+      <button id="open-dashboard-2"
+        class="px-10 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-2xl shadow-2xl shadow-emerald-900/40 transition-all transform hover:-translate-y-1 text-sm">
+        Accéder au Tableau de Bord Économique
+      </button>
+    </div>
+  </section>
 
-  <footer class="border-t border-slate-900 bg-[#070a13] py-20 px-6">
-    <!-- Footer unchanged -->
-  </footer>
-
-  <!-- React + Dashboard Script -->
-  <script type="text/babel">
-    const { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } = Recharts;
-    const { Landmark, Globe, Briefcase, Users, ArrowUpRight, ArrowDownRight, Layout } = lucideReact;
-
-    
-const [data, setData] = React.useState([]);
-const [loading, setLoading] = React.useState(true);
-
-// 🌍 Burkina Faso GDP (World Bank API)
-const fetchAfricanData = async () => {
-  try {
-    const response = await fetch(
-      "https://api.worldbank.org/v2/country/BFA/indicator/NY.GDP.MKTP.KD.ZG?format=json"
-    );
-    const json = await response.json();
-
-    const formatted = json[1]
-      .filter(item => item.value !== null)
-      .slice(0, 8)
-      .reverse()
-      .map(item => ({
-        name: item.date,
-        gdp: item.value
-      }));
-
-    setData(formatted);
-    setLoading(false);
-  } catch (error) {
-    console.error("Erreur API:", error);
-  }
-};
-
-React.useEffect(() => {
-  fetchAfricanData();
-}, []);
-
-const DashboardView = () => (
-  <div className="space-y-8 animate-in fade-in duration-500">
-
-    <header className="flex justify-between items-end">
-      <div>
-        <h2 className="text-3xl font-black text-slate-900 tracking-tight">
-          Africa Market Pulse 🌍
-        </h2>
-        <p className="text-slate-500 font-medium">
-          Burkina Faso - Données économiques en temps réel
-        </p>
-      </div>
-    </header>
-
-    {/* KPI dynamique */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <StatCard title="Croissance PIB (BF)" value={loading ? "..." : `${data.at(-1)?.gdp.toFixed(2)}%`} change="+Live" icon={Landmark} isPositive={true} />
-      <StatCard title="Source" value="World Bank" change="API" icon={Globe} isPositive={true} />
-      <StatCard title="Pays" value="Burkina Faso" change="Afrique" icon={Briefcase} isPositive={true} />
-      <StatCard title="Statut" value={loading ? "Chargement..." : "Actif"} change="Realtime" icon={Users} isPositive={true} />
+  <!-- LEADERS SECTION -->
+  <section id="leaders" class="py-16 border-t border-white/5">
+    <div class="max-w-4xl mx-auto text-center mb-10">
+      <span class="tag tag-amber">Données Wikidata</span>
+      <h2 class="syne text-4xl font-black mt-5 mb-4">Dirigeants <span class="text-emerald-400">Africains</span></h2>
+      <p class="text-slate-400 text-sm max-w-xl mx-auto">Chefs d'État et de gouvernement, données historiques et actuelles issues de Wikidata.</p>
     </div>
 
-    {/* Graph dynamique */}
-    <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 mt-10">
-      <h3 className="text-lg font-black text-slate-800 mb-8 uppercase tracking-widest">
-        Croissance du PIB (Burkina Faso)
-      </h3>
+    <section id="leaders-section" class="hidden">
+      <div id="leaders-root"></div>
+      <div class="text-center mt-8">
+        <button id="close-leaders" class="px-6 py-2.5 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-bold">
+          Fermer
+        </button>
+      </div>
+    </section>
 
-      <div className="h-80">
-        {loading ? (
-          <p className="text-center text-slate-400">Chargement des données...</p>
-        ) : (
-          <ResponsiveContainer width="100%" height="100%">
-            <AreaChart data={data}>
-              <defs>
-                <linearGradient id="colorGdp" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#10b981" stopOpacity={0.1}/>
-                  <stop offset="95%" stopColor="#10b981" stopOpacity={0}/>
-                </linearGradient>
-              </defs>
+    <div id="leaders-cta" class="text-center">
+      <button id="open-leaders-2"
+        class="px-10 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold rounded-2xl transition-all text-sm">
+        Explorer les Dirigeants Africains
+      </button>
+    </div>
+  </section>
 
-              <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
+</main>
 
-              <Area
-                type="monotone"
-                dataKey="gdp"
-                stroke="#10b981"
-                fill="url(#colorGdp)"
-                strokeWidth={3}
-              />
-            </AreaChart>
-          </ResponsiveContainer>
-        )}
+<!-- FOOTER -->
+<footer class="border-t border-slate-900 bg-[#070a13] py-16 px-6 text-center">
+  <div class="syne font-black text-lg mb-2">Vintelligent<span class="text-emerald-400">Africa</span></div>
+  <p class="text-slate-500 text-xs">© 2024 — Intelligence Stratégique & Système d'Information Décisionnel</p>
+  <p class="text-slate-700 text-xs mt-2">Données: Wikidata · World Bank · UN Data</p>
+</footer>
+
+<!-- REACT SCRIPTS -->
+<script type="text/babel">
+
+const { useState, useEffect, useCallback } = React;
+const { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Legend } = Recharts;
+const { Landmark, Globe, Briefcase, Users, ArrowUpRight, ArrowDownRight, RefreshCw, Search, Filter, AlertTriangle, ChevronDown } = lucideReact;
+
+// ─── MOCK CHART DATA ────────────────────────────────────────────────────────
+const mockChartData = [
+  { name: '2019', gdp: 3.5, fdi: 45 },
+  { name: '2020', gdp: -2.1, fdi: 38 },
+  { name: '2021', gdp: 4.8, fdi: 42 },
+  { name: '2022', gdp: 4.1, fdi: 47 },
+  { name: '2023', gdp: 3.8, fdi: 51 },
+  { name: '2024E', gdp: 4.2, fdi: 54 },
+];
+
+// ─── STAT CARD ───────────────────────────────────────────────────────────────
+const StatCard = ({ title, value, change, icon: Icon, isPositive }) => (
+  <div style={{background:'rgba(15,23,42,0.8)', border:'1px solid rgba(255,255,255,0.07)', borderRadius:'20px', padding:'24px'}}>
+    <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'16px'}}>
+      <div style={{padding:'8px', background:'rgba(16,185,129,0.1)', borderRadius:'12px'}}>
+        <Icon size={18} color="#10b981" />
+      </div>
+      <div style={{display:'flex', alignItems:'center', fontSize:'12px', fontWeight:700, color: isPositive ? '#10b981' : '#f87171'}}>
+        {change}
+        {isPositive ? <ArrowUpRight size={14}/> : <ArrowDownRight size={14}/>}
+      </div>
+    </div>
+    <div style={{fontSize:'10px', fontWeight:700, textTransform:'uppercase', letterSpacing:'0.1em', color:'#64748b'}}>{title}</div>
+    <div style={{fontSize:'28px', fontWeight:900, color:'#f1f5f9', marginTop:'4px', fontFamily:'Syne, sans-serif'}}>{value}</div>
+  </div>
+);
+
+// ─── DASHBOARD VIEW ──────────────────────────────────────────────────────────
+const DashboardView = () => (
+  <div style={{background:'#0f172a', borderRadius:'24px', padding:'32px', border:'1px solid rgba(255,255,255,0.06)'}}>
+    <div style={{display:'flex', justifyContent:'space-between', alignItems:'flex-end', marginBottom:'28px'}}>
+      <div>
+        <h2 style={{fontFamily:'Syne,sans-serif', fontSize:'26px', fontWeight:900, color:'#f1f5f9', margin:0}}>Market Pulse</h2>
+        <p style={{color:'#64748b', fontSize:'13px', margin:'4px 0 0', fontWeight:500}}>Monitoring Économique 360° en Afrique</p>
+      </div>
+      <div style={{display:'flex', gap:'8px'}}>
+        <span className="tag tag-blue">EMEA HUB</span>
+        <span className="tag tag-emerald">SUBSAHARAN HUB</span>
+      </div>
+    </div>
+
+    <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(200px, 1fr))', gap:'16px', marginBottom:'28px'}}>
+      <StatCard title="Croissance PIB" value="4.2%" change="+0.4%" icon={Landmark} isPositive={true} />
+      <StatCard title="Flux d'IDE" value="$54.2B" change="+12%" icon={Globe} isPositive={true} />
+      <StatCard title="Projets Actifs" value="1 284" change="-2.1%" icon={Briefcase} isPositive={false} />
+      <StatCard title="Indice Consommateur" value="102.4" change="+5.2%" icon={Users} isPositive={true} />
+    </div>
+
+    <div style={{background:'rgba(15,23,42,0.8)', border:'1px solid rgba(255,255,255,0.07)', borderRadius:'20px', padding:'28px'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'10px', marginBottom:'24px'}}>
+        <h3 style={{fontFamily:'Syne,sans-serif', fontSize:'13px', fontWeight:800, textTransform:'uppercase', letterSpacing:'0.12em', color:'#e2e8f0', margin:0}}>
+          Dynamique de Croissance
+        </h3>
+        <span className="tag tag-emerald">EN TEMPS RÉEL</span>
+      </div>
+      <div style={{height:'280px'}}>
+        <ResponsiveContainer width="100%" height="100%">
+          <AreaChart data={mockChartData}>
+            <defs>
+              <linearGradient id="colorGdp" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#10b981" stopOpacity={0.15}/>
+                <stop offset="95%" stopColor="#10b981" stopOpacity={0}/>
+              </linearGradient>
+              <linearGradient id="colorFdi" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#60a5fa" stopOpacity={0.12}/>
+                <stop offset="95%" stopColor="#60a5fa" stopOpacity={0}/>
+              </linearGradient>
+            </defs>
+            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(255,255,255,0.04)" />
+            <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{fill:'#475569', fontSize:11, fontWeight:600}} />
+            <YAxis axisLine={false} tickLine={false} tick={{fill:'#475569', fontSize:11}} />
+            <Tooltip
+              contentStyle={{background:'#1e293b', border:'1px solid rgba(255,255,255,0.1)', borderRadius:'12px', color:'#f1f5f9', fontSize:'12px'}}
+              cursor={{stroke:'rgba(16,185,129,0.2)'}}
+            />
+            <Area type="monotone" dataKey="gdp" name="PIB (%)" stroke="#10b981" fillOpacity={1} fill="url(#colorGdp)" strokeWidth={2.5} dot={false} />
+            <Area type="monotone" dataKey="fdi" name="IDE ($B)" stroke="#60a5fa" fillOpacity={1} fill="url(#colorFdi)" strokeWidth={2.5} dot={false} />
+            <Legend wrapperStyle={{fontSize:'11px', color:'#64748b', paddingTop:'16px'}} />
+          </AreaChart>
+        </ResponsiveContainer>
       </div>
     </div>
   </div>
 );
 
+// ─── WIKIDATA COUNTRIES ───────────────────────────────────────────────────────
+// role = Wikidata QID for "president/head of state of [country]"
+const COUNTRIES = [
+  { label: "Burkina Faso",  role: "Q30461"   },
+  { label: "Sénégal",       role: "Q2115486" },
+  { label: "Mali",          role: "Q1007985" },
+  { label: "Côte d'Ivoire", role: "Q3099174" },
+  { label: "Ghana",         role: "Q1065368" },
+  { label: "Nigeria",       role: "Q1058255" },
+  { label: "Kenya",         role: "Q2647001" },
+  { label: "Cameroun",      role: "Q3099399" },
+  { label: "Éthiopie",      role: "Q29552"   },
+  { label: "Rwanda",        role: "Q1065082" },
+];
 
-    const StatCard = ({ title, value, change, icon: Icon, isPositive }) => (
-      <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 group hover:border-emerald-200 transition-all">
-        <div className="flex items-center justify-between mb-4">
-          <div className="p-2 bg-slate-50 rounded-xl group-hover:bg-emerald-50 transition-colors">
-            <Icon className="text-emerald-600" size={20} />
-          </div>
-          <div className={`flex items-center text-sm font-bold ${isPositive ? 'text-emerald-600' : 'text-red-600'}`}>
-            {change}
-            {isPositive ? <ArrowUpRight size={16} /> : <ArrowDownRight size={16} />}
-          </div>
+// Wikidata SPARQL query — directly filters by the position QID
+function buildQuery(country) {
+  return `
+SELECT DISTINCT ?person ?personLabel ?birthDate ?startDate ?endDate WHERE {
+  ?person p:P39 ?stmt.
+  ?stmt ps:P39 wd:${country.role}.
+  OPTIONAL { ?person wdt:P569 ?birthDate. }
+  OPTIONAL { ?stmt pq:P580 ?startDate. }
+  OPTIONAL { ?stmt pq:P582 ?endDate. }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "fr,en". }
+}
+ORDER BY DESC(?startDate)
+LIMIT 40
+  `.trim();
+}
+
+// Fetch leaders from Wikidata
+async function fetchLeaders(country) {
+  const query = buildQuery(country);
+  const url = `https://query.wikidata.org/sparql?format=json&query=${encodeURIComponent(query)}`;
+  const res = await fetch(url, { headers: { 'Accept': 'application/sparql-results+json' } });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const data = await res.json();
+  const rows = data.results.bindings.map(b => {
+    const birthRaw = b.birthDate?.value || '';
+    const birthYear = birthRaw.match(/^-?\d{4}/) ? birthRaw.slice(0,4).replace(/^-/,'') : null;
+    const startRaw = b.startDate?.value || '';
+    const startYear = startRaw.slice(0,4) || null;
+    const endRaw = b.endDate?.value || '';
+    const endYear = endRaw.slice(0,4) || null;
+    return {
+      id: b.person?.value || '',
+      name: b.personLabel?.value || '—',
+      birth: birthYear && parseInt(birthYear) > 1800 ? birthYear : null,
+      start: startYear || null,
+      end: endYear || null,
+    };
+  });
+  // Remove duplicate person+start combinations
+  const seen = new Set();
+  return rows.filter(r => {
+    const key = r.id + '|' + (r.start||'?');
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function calcDuration(start, end) {
+  if (!start) return null;
+  const s = parseInt(start);
+  const e = end ? parseInt(end) : new Date().getFullYear();
+  return e - s;
+}
+
+// ─── LEADERS VIEW ─────────────────────────────────────────────────────────────
+const LeadersView = () => {
+  const [selectedCountry, setSelectedCountry] = useState(COUNTRIES[0]);
+  const [leaders, setLeaders] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [search, setSearch] = useState('');
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const load = useCallback(async (country) => {
+    setLoading(true);
+    setError(null);
+    setLeaders([]);
+    try {
+      const data = await fetchLeaders(country);
+      setLeaders(data);
+    } catch(e) {
+      setError('Impossible de charger les données Wikidata. Vérifiez votre connexion.');
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => { load(selectedCountry); }, [selectedCountry]);
+
+  const filtered = leaders.filter(l => l.name.toLowerCase().includes(search.toLowerCase()));
+
+  const avgDuration = (() => {
+    const ds = leaders.map(l => calcDuration(l.start, l.end)).filter(Boolean);
+    if (!ds.length) return null;
+    return (ds.reduce((a,b)=>a+b,0)/ds.length).toFixed(1);
+  })();
+
+  const youngest = leaders.filter(l=>l.birth&&l.start).map(l=>({...l, ageAtStart: parseInt(l.start)-parseInt(l.birth)})).sort((a,b)=>a.ageAtStart-b.ageAtStart)[0];
+  const longest  = leaders.filter(l=>calcDuration(l.start,l.end)).sort((a,b)=>calcDuration(b.start,b.end)-calcDuration(a.start,a.end))[0];
+
+  return (
+    <div style={{background:'#0f172a', borderRadius:'24px', padding:'32px', border:'1px solid rgba(255,255,255,0.06)'}}>
+      {/* Header */}
+      <div style={{display:'flex', justifyContent:'space-between', alignItems:'flex-end', marginBottom:'24px', flexWrap:'wrap', gap:'12px'}}>
+        <div>
+          <h2 style={{fontFamily:'Syne,sans-serif', fontSize:'24px', fontWeight:900, color:'#f1f5f9', margin:0}}>
+            Dirigeants — <span style={{color:'#10b981'}}>{selectedCountry.label}</span>
+          </h2>
+          <p style={{color:'#64748b', fontSize:'12px', margin:'4px 0 0'}}>Source : Wikidata · SPARQL · données vérifiées</p>
         </div>
-        <h3 className="text-slate-500 text-xs font-bold uppercase tracking-widest">{title}</h3>
-        <p className="text-3xl font-black text-slate-800 mt-1 tracking-tight">{value}</p>
+        <div style={{display:'flex', gap:'8px', alignItems:'center', flexWrap:'wrap'}}>
+          {/* Country selector */}
+          <div style={{position:'relative'}}>
+            <button
+              onClick={()=>setShowDropdown(!showDropdown)}
+              style={{display:'flex', alignItems:'center', gap:'6px', padding:'8px 14px', background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:'10px', color:'#f1f5f9', fontSize:'12px', fontWeight:600, cursor:'pointer'}}
+            >
+              {selectedCountry.label} <ChevronDown size={14}/>
+            </button>
+            {showDropdown && (
+              <div style={{position:'absolute', right:0, top:'calc(100% + 6px)', background:'#1e293b', border:'1px solid rgba(255,255,255,0.1)', borderRadius:'12px', overflow:'hidden', zIndex:100, minWidth:'180px', boxShadow:'0 20px 40px rgba(0,0,0,0.4)'}}>
+                {COUNTRIES.map(c=>(
+                  <button key={c.qid}
+                    onClick={()=>{ setSelectedCountry(c); setShowDropdown(false); setSearch(''); }}
+                    style={{display:'block', width:'100%', padding:'10px 16px', background: c.qid===selectedCountry.qid ? 'rgba(16,185,129,0.1)' : 'transparent', border:'none', color: c.qid===selectedCountry.qid ? '#10b981' : '#94a3b8', fontSize:'12px', fontWeight:600, textAlign:'left', cursor:'pointer'}}
+                  >{c.label}</button>
+                ))}
+              </div>
+            )}
+          </div>
+          <button onClick={()=>load(selectedCountry)}
+            style={{padding:'8px', background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:'10px', color:'#94a3b8', cursor:'pointer', display:'flex', alignItems:'center'}}>
+            <RefreshCw size={14}/>
+          </button>
+        </div>
       </div>
-    );
 
-    const DashboardView = () => (
-      <div className="space-y-8 animate-in fade-in duration-500">
-        <header className="flex justify-between items-end">
-          <div>
-            <h2 className="text-3xl font-black text-slate-900 tracking-tight">Market Pulse</h2>
-            <p className="text-slate-500 font-medium">Monitoring Économique 360° en Afrique.</p>
+      {/* Stats row */}
+      {!loading && leaders.length > 0 && (
+        <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(150px, 1fr))', gap:'12px', marginBottom:'20px'}}>
+          <div style={{background:'rgba(16,185,129,0.05)', border:'1px solid rgba(16,185,129,0.1)', borderRadius:'14px', padding:'16px'}}>
+            <div style={{fontSize:'9px', fontWeight:700, textTransform:'uppercase', letterSpacing:'0.1em', color:'#10b981', marginBottom:'4px'}}>Total recensés</div>
+            <div style={{fontSize:'24px', fontWeight:900, color:'#f1f5f9', fontFamily:'Syne,sans-serif'}}>{leaders.length}</div>
           </div>
-          <div className="hidden lg:flex space-x-2">
-            <span className="px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600">EMEA HUB</span>
-            <span className="px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600">SUBSAHARAN HUB</span>
-          </div>
-        </header>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <StatCard title="Croissance PIB" value="4.2%" change="+0.4%" icon={Landmark} isPositive={true} />
-          <StatCard title="Flux d’IDE" value="$54.2B" change="+12%" icon={Globe} isPositive={true} />
-          <StatCard title="Projets Actifs" value="1 284" change="-2.1%" icon={Briefcase} isPositive={false} />
-          <StatCard title="Indice Consommateur" value="102.4" change="+5.2%" icon={Users} isPositive={true} />
+          {avgDuration && (
+            <div style={{background:'rgba(96,165,250,0.05)', border:'1px solid rgba(96,165,250,0.1)', borderRadius:'14px', padding:'16px'}}>
+              <div style={{fontSize:'9px', fontWeight:700, textTransform:'uppercase', letterSpacing:'0.1em', color:'#60a5fa', marginBottom:'4px'}}>Durée moy. mandat</div>
+              <div style={{fontSize:'24px', fontWeight:900, color:'#f1f5f9', fontFamily:'Syne,sans-serif'}}>{avgDuration} <span style={{fontSize:'13px', color:'#64748b'}}>ans</span></div>
+            </div>
+          )}
+          {youngest && (
+            <div style={{background:'rgba(251,191,36,0.05)', border:'1px solid rgba(251,191,36,0.1)', borderRadius:'14px', padding:'16px'}}>
+              <div style={{fontSize:'9px', fontWeight:700, textTransform:'uppercase', letterSpacing:'0.1em', color:'#fbbf24', marginBottom:'4px'}}>+ Jeune à la prise</div>
+              <div style={{fontSize:'13px', fontWeight:700, color:'#f1f5f9'}}>{youngest.name}</div>
+              <div style={{fontSize:'11px', color:'#64748b'}}>{youngest.ageAtStart} ans</div>
+            </div>
+          )}
+          {longest && (
+            <div style={{background:'rgba(239,68,68,0.05)', border:'1px solid rgba(239,68,68,0.1)', borderRadius:'14px', padding:'16px'}}>
+              <div style={{fontSize:'9px', fontWeight:700, textTransform:'uppercase', letterSpacing:'0.1em', color:'#f87171', marginBottom:'4px'}}>+ Long mandat</div>
+              <div style={{fontSize:'13px', fontWeight:700, color:'#f1f5f9'}}>{longest.name}</div>
+              <div style={{fontSize:'11px', color:'#64748b'}}>{calcDuration(longest.start, longest.end)} ans</div>
+            </div>
+          )}
         </div>
+      )}
 
-        <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 mt-10">
-          <h3 className="text-lg font-black text-slate-800 mb-8 uppercase tracking-widest flex items-center">
-            Dynamique de Croissance <span className="ml-2 px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[10px] rounded">EN TEMPS RÉEL</span>
-          </h3>
-          <div className="h-80">
-            <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={mockChartData}>
-                <defs>
-                  <linearGradient id="colorGdp" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#10b981" stopOpacity={0.1}/>
-                    <stop offset="95%" stopColor="#10b981" stopOpacity={0}/>
-                  </linearGradient>
-                </defs>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 11, fontWeight: 600}} />
-                <YAxis axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 11}} />
-                <Tooltip contentStyle={{borderRadius: '16px', border: 'none', boxShadow: '0 10px 30px rgba(0,0,0,0.08)'}} />
-                <Area type="monotone" dataKey="gdp" stroke="#10b981" fillOpacity={1} fill="url(#colorGdp)" strokeWidth={4} />
-              </AreaChart>
-            </ResponsiveContainer>
-          </div>
+      {/* Search */}
+      {!loading && leaders.length > 0 && (
+        <div style={{position:'relative', marginBottom:'16px'}}>
+          <Search size={14} style={{position:'absolute', left:'12px', top:'50%', transform:'translateY(-50%)', color:'#475569'}}/>
+          <input
+            value={search}
+            onChange={e=>setSearch(e.target.value)}
+            placeholder="Rechercher un dirigeant..."
+            style={{width:'100%', padding:'10px 12px 10px 34px', background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'10px', color:'#f1f5f9', fontSize:'12px', outline:'none', boxSizing:'border-box'}}
+          />
         </div>
+      )}
+
+      {/* Loading */}
+      {loading && (
+        <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', padding:'48px'}}>
+          <div className="spinner" style={{marginBottom:'16px'}}></div>
+          <p style={{color:'#64748b', fontSize:'12px'}}>Interrogation Wikidata SPARQL…</p>
+        </div>
+      )}
+
+      {/* Error */}
+      {error && !loading && (
+        <div style={{display:'flex', alignItems:'center', gap:'10px', padding:'16px 20px', background:'rgba(239,68,68,0.06)', border:'1px solid rgba(239,68,68,0.15)', borderRadius:'12px', color:'#f87171', fontSize:'12px'}}>
+          <AlertTriangle size={16}/>
+          <span>{error}</span>
+        </div>
+      )}
+
+      {/* Table */}
+      {!loading && !error && filtered.length > 0 && (
+        <div style={{background:'rgba(15,23,42,0.6)', border:'1px solid rgba(255,255,255,0.06)', borderRadius:'16px', overflow:'hidden'}}>
+          <div className="leader-row-header">
+            <span style={{fontSize:'9px', fontWeight:700, textTransform:'uppercase', letterSpacing:'0.1em', color:'#475569'}}>Nom</span>
+            <span style={{fontSize:'9px', fontWeight:700, textTransform:'uppercase', letterSpacing:'0.1em', color:'#475569'}}>Mandat</span>
+            <span style={{fontSize:'9px', fontWeight:700, textTransform:'uppercase', letterSpacing:'0.1em', color:'#475569'}} className="hide-mobile">Naissance</span>
+            <span style={{fontSize:'9px', fontWeight:700, textTransform:'uppercase', letterSpacing:'0.1em', color:'#475569'}} className="hide-mobile">Âge début</span>
+            <span style={{fontSize:'9px', fontWeight:700, textTransform:'uppercase', letterSpacing:'0.1em', color:'#475569'}}>Durée</span>
+          </div>
+          {filtered.map((l, i) => {
+            const dur = calcDuration(l.start, l.end);
+            const ageAtStart = l.birth && l.start ? parseInt(l.start) - parseInt(l.birth) : null;
+            const isCurrent = l.start && !l.end;
+            return (
+              <div key={i} className="leader-row" style={{borderTop: i===0 ? 'none' : '1px solid rgba(255,255,255,0.04)'}}>
+                <div>
+                  <div style={{fontSize:'13px', fontWeight:700, color:'#f1f5f9'}}>{l.name}</div>
+                  {isCurrent && <span className="tag tag-emerald" style={{marginTop:'4px'}}>En fonction</span>}
+                </div>
+                <div style={{fontSize:'12px', color:'#64748b'}}>
+                  {l.start || '?'} → {l.end || (isCurrent ? 'présent' : '?')}
+                </div>
+                <div style={{fontSize:'12px', color:'#64748b'}} className="hide-mobile">{l.birth || '—'}</div>
+                <div className="hide-mobile">
+                  {ageAtStart ? (
+                    <span style={{fontSize:'12px', fontWeight:700, color: ageAtStart < 40 ? '#10b981' : '#94a3b8'}}>
+                      {ageAtStart} ans
+                    </span>
+                  ) : <span style={{color:'#334155'}}>—</span>}
+                </div>
+                <div>
+                  {dur ? (
+                    <span style={{fontSize:'12px', fontWeight:700, color: dur > 10 ? '#f87171' : dur > 5 ? '#fbbf24' : '#10b981'}}>
+                      {dur} ans
+                    </span>
+                  ) : <span style={{color:'#334155', fontSize:'12px'}}>—</span>}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Empty state */}
+      {!loading && !error && leaders.length === 0 && (
+        <div style={{textAlign:'center', padding:'48px', color:'#475569', fontSize:'13px'}}>
+          Aucun résultat trouvé pour ce pays.
+        </div>
+      )}
+
+      {/* Attribution */}
+      <div style={{marginTop:'16px', textAlign:'right', fontSize:'10px', color:'#334155'}}>
+        Données : <a href="https://www.wikidata.org" target="_blank" style={{color:'#475569', textDecoration:'underline'}}>Wikidata SPARQL API</a> · Licence CC0
       </div>
-    );
+    </div>
+  );
+};
 
-    // Button interaction logic
-    const openBtn = document.getElementById('open-dashboard');
-    const closeBtn = document.getElementById('close-dashboard');
-    const section = document.getElementById('dashboard-section');
+// ─── MOUNT LOGIC ──────────────────────────────────────────────────────────────
+let dashRoot = null;
+let leadRoot = null;
 
-    openBtn.addEventListener('click', () => {
-      section.classList.remove('hidden');
-      ReactDOM.createRoot(document.getElementById('dashboard-root')).render(<DashboardView />);
-      section.scrollIntoView({ behavior: 'smooth' });
-    });
+function mountDashboard() {
+  const section = document.getElementById('dashboard-section');
+  const cta = document.getElementById('invest-cta');
+  section.classList.remove('hidden');
+  cta.classList.add('hidden');
+  if (!dashRoot) dashRoot = ReactDOM.createRoot(document.getElementById('dashboard-root'));
+  dashRoot.render(<DashboardView />);
+  section.scrollIntoView({ behavior:'smooth', block:'start' });
+}
 
-    closeBtn.addEventListener('click', () => {
-      section.classList.add('hidden');
-      document.getElementById('dashboard-root').innerHTML = '';
-    });
-  </script>
+function unmountDashboard() {
+  const section = document.getElementById('dashboard-section');
+  const cta = document.getElementById('invest-cta');
+  section.classList.add('hidden');
+  cta.classList.remove('hidden');
+}
+
+function mountLeaders() {
+  const section = document.getElementById('leaders-section');
+  const cta = document.getElementById('leaders-cta');
+  section.classList.remove('hidden');
+  cta.classList.add('hidden');
+  if (!leadRoot) leadRoot = ReactDOM.createRoot(document.getElementById('leaders-root'));
+  leadRoot.render(<LeadersView />);
+  section.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+function unmountLeaders() {
+  const section = document.getElementById('leaders-section');
+  const cta = document.getElementById('leaders-cta');
+  section.classList.add('hidden');
+  cta.classList.remove('hidden');
+}
+
+// Wire buttons — setTimeout 0 ensures Babel async transform is done
+setTimeout(() => {
+document.getElementById('open-dashboard').addEventListener('click', mountDashboard);
+document.getElementById('open-dashboard-2').addEventListener('click', mountDashboard);
+document.getElementById('close-dashboard').addEventListener('click', unmountDashboard);
+document.getElementById('open-leaders').addEventListener('click', () => { document.getElementById('leaders').scrollIntoView({behavior:'smooth'}); setTimeout(mountLeaders, 600); });
+document.getElementById('open-leaders-2').addEventListener('click', mountLeaders);
+document.getElementById('close-leaders').addEventListener('click', unmountLeaders);
+}, 0);
+
+</script>
 </body>
 </html>
