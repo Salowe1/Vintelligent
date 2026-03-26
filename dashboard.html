@@ -132,14 +132,7 @@
     </div>
 
     <!-- Dashboard section -->
-    <section id="dashboard-section" class="hidden py-4">
-      <div id="dashboard-root" class="rounded-3xl overflow-hidden"></div>
-      <div class="text-center mt-8">
-        <button id="close-dashboard" class="px-6 py-2.5 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-bold">
-          Fermer le Tableau de Bord
-        </button>
-      </div>
-    </section>
+    <div id="dynamic-content-root" class="min-h-[100px] mb-12"></div>
 
     <div id="invest-cta" class="text-center">
       <button id="open-dashboard-2"
@@ -536,53 +529,57 @@ const LeadersView = () => {
   );
 };
 
-// ─── MOUNT LOGIC ──────────────────────────────────────────────────────────────
-let dashRoot = null;
-let leadRoot = null;
+// ─── LOGIQUE D'AFFICHAGE DYNAMIQUE ──────────────────────────────────────────
+const App = () => {
+  const [view, setView] = useState(null); // 'dashboard' ou 'leaders'
 
-function mountDashboard() {
-  const section = document.getElementById('dashboard-section');
-  const cta = document.getElementById('invest-cta');
-  section.classList.remove('hidden');
-  cta.classList.add('hidden');
-  if (!dashRoot) dashRoot = ReactDOM.createRoot(document.getElementById('dashboard-root'));
-  dashRoot.render(<DashboardView />);
-  section.scrollIntoView({ behavior:'smooth', block:'start' });
-}
+  // Écoute les événements globaux des boutons HTML
+  useEffect(() => {
+    const showDash = () => setView('dashboard');
+    const showLead = () => setView('leaders');
+    
+    // Liaison avec tes ID de boutons HTML existants
+    document.getElementById('open-dashboard').onclick = showDash;
+    document.getElementById('open-dashboard-2').onclick = showDash;
+    document.getElementById('open-leaders').onclick = showLead;
+    document.getElementById('open-leaders-2').onclick = showLead;
+    
+    // Gestion de la fermeture
+    window.closeView = () => setView(null);
+  }, []);
 
-function unmountDashboard() {
-  const section = document.getElementById('dashboard-section');
-  const cta = document.getElementById('invest-cta');
-  section.classList.add('hidden');
-  cta.classList.remove('hidden');
-}
+  if (view === 'dashboard') {
+    return (
+      <div className="fade-in">
+        <DashboardView />
+        <div className="text-center mt-8">
+          <button onClick={() => setView(null)} className="px-6 py-2.5 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-bold">
+            Fermer le Tableau de Bord
+          </button>
+        </div>
+      </div>
+    );
+  }
 
-function mountLeaders() {
-  const section = document.getElementById('leaders-section');
-  const cta = document.getElementById('leaders-cta');
-  section.classList.remove('hidden');
-  cta.classList.add('hidden');
-  if (!leadRoot) leadRoot = ReactDOM.createRoot(document.getElementById('leaders-root'));
-  leadRoot.render(<LeadersView />);
-  section.scrollIntoView({ behavior:'smooth', block:'start' });
-}
+  if (view === 'leaders') {
+    return (
+      <div className="fade-in">
+        <LeadersView />
+        <div className="text-center mt-8">
+          <button onClick={() => setView(null)} className="px-6 py-2.5 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-bold">
+            Fermer l'Explorateur
+          </button>
+        </div>
+      </div>
+    );
+  }
 
-function unmountLeaders() {
-  const section = document.getElementById('leaders-section');
-  const cta = document.getElementById('leaders-cta');
-  section.classList.add('hidden');
-  cta.classList.remove('hidden');
-}
+  return null; // Rien n'est affiché par défaut
+};
 
-// Wire buttons — setTimeout 0 ensures Babel async transform is done
-setTimeout(() => {
-document.getElementById('open-dashboard').addEventListener('click', mountDashboard);
-document.getElementById('open-dashboard-2').addEventListener('click', mountDashboard);
-document.getElementById('close-dashboard').addEventListener('click', unmountDashboard);
-document.getElementById('open-leaders').addEventListener('click', () => { document.getElementById('leaders').scrollIntoView({behavior:'smooth'}); setTimeout(mountLeaders, 600); });
-document.getElementById('open-leaders-2').addEventListener('click', mountLeaders);
-document.getElementById('close-leaders').addEventListener('click', unmountLeaders);
-}, 0);
+// Montage unique dans un conteneur principal
+const root = ReactDOM.createRoot(document.getElementById('dynamic-content-root'));
+root.render(<App />);
 
 </script>
 </body>
