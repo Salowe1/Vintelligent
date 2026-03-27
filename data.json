@@ -4,7 +4,50 @@
         "prix": "---",
         "variation": "0%",
         "conseil": "Analyse des flux financiers en cours. Prudence recommandée.",
-        "maj": "26/03/2026 09:10"
+        "maj": "27/03/2026 09:05"
     },
-    "articles": []
+    "articles": [
+        {
+            "titre": "CEDEAO : le guinéen Lansana Kouyaté nommé médiateur pour renouer le dialogue avec les pays de l’AES",
+            "lien": "https://www.financialafrik.com/2026/03/27/cedeao-le-guineen-lansana-kouyate-nomme-mediateur-pour-renouer-le-dialogue-avec-les-pays-de-laes/",
+            "source": "Financial Afrik",
+            "date": "27/03/2026",
+            "resume": "<a href=\"https://www.financialafrik.com/2026/03/27/cedeao-le-guineen-lansana-kouyate-nomme-mediateur-pour-renouer-le-dialogue-avec-les-pays-de-laes/\">..."
+        },
+        {
+            "titre": "Acquisition des billets d’avion de l’Etat : le Burkina Faso lance sa solution digitale « e-Dimaakia »",
+            "lien": "https://www.financialafrik.com/2026/03/27/acquisition-des-billets-davion-de-letat-le-burkina-faso-lance-sa-solution-digitale-e-dimaakia/",
+            "source": "Financial Afrik",
+            "date": "27/03/2026",
+            "resume": "<a href=\"https://www.financialafrik.com/2026/03/27/acquisition-des-billets-davion-de-letat-le-burkina-faso-lance-sa-solution-digitale-e-dimaakia/\"><im..."
+        },
+        {
+            "titre": "Maroc : BNP Paribas amorce la sortie de BMCI",
+            "lien": "https://www.financialafrik.com/2026/03/26/maroc-bnp-paribas-amorce-la-sortie-de-bmci/",
+            "source": "Financial Afrik",
+            "date": "27/03/2026",
+            "resume": "<a href=\"https://www.financialafrik.com/2026/03/26/maroc-bnp-paribas-amorce-la-sortie-de-bmci/\"><img align=\"center\" alt=\"Maroc : BNP Paribas amorce la..."
+        },
+        {
+            "titre": "Le Burkina Faso obtient 76,999 milliards de FCFA auprès des investisseurs du marché financier de l’UMOA",
+            "lien": "https://www.financialafrik.com/2026/03/26/le-burkina-faso-obtient-76999-milliards-de-fcfa-aupres-des-investisseurs-du-marche-financier-de-lumoa/",
+            "source": "Financial Afrik",
+            "date": "27/03/2026",
+            "resume": "<a href=\"https://www.financialafrik.com/2026/03/26/le-burkina-faso-obtient-76999-milliards-de-fcfa-aupres-des-investisseurs-du-marche-financier-de-lum..."
+        },
+        {
+            "titre": "Dividende 2025 : La BOA Mali versera plus de 9 milliards de FCFA à ses actionnaires à compter du 31 mai 2026",
+            "lien": "https://www.financialafrik.com/2026/03/26/dividende-2025-la-boa-mali-versera-plus-de-9-milliards-de-fcfa-a-ses-actionnaires-a-compter-du-31-mai-2026/",
+            "source": "Financial Afrik",
+            "date": "27/03/2026",
+            "resume": "<a href=\"https://www.financialafrik.com/2026/03/26/dividende-2025-la-boa-mali-versera-plus-de-9-milliards-de-fcfa-a-ses-actionnaires-a-compter-du-31-m..."
+        },
+        {
+            "titre": "Sénégal : le ministre des Finances réfute les «allégations»  de dette cachée",
+            "lien": "https://www.financialafrik.com/2026/03/26/senegal-le-ministre-des-finances-refute-les-allegations-de-dette-cachee/",
+            "source": "Financial Afrik",
+            "date": "27/03/2026",
+            "resume": "<a href=\"https://www.financialafrik.com/2026/03/26/senegal-le-ministre-des-finances-refute-les-allegations-de-dette-cachee/\"><img align=\"center\" alt=\"..."
+        }
+    ]
 }
