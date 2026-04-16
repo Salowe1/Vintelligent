@@ -4,50 +4,7 @@
         "prix": "---",
         "variation": "0%",
         "conseil": "Analyse des flux financiers en cours. Prudence recommandée.",
-        "maj": "15/04/2026 09:46"
+        "maj": "16/04/2026 09:30"
     },
-    "articles": [
-        {
-            "titre": "Mauritanie-France : le président Ghazouzni reçu avec les égards d’un partenaire clé dans un Sahel tourmenté",
-            "lien": "https://www.financialafrik.com/2026/04/15/mauritanie-france-le-president-ghazouzni-recu-avec-les-egards-dun-partenaire-cle-dans-un-sahel-tourmente/",
-            "source": "Financial Afrik",
-            "date": "15/04/2026",
-            "resume": "<a href=\"https://www.financialafrik.com/2026/04/15/mauritanie-france-le-president-ghazouzni-recu-avec-les-egards-dun-partenaire-cle-dans-un-sahel-tour..."
-        },
-        {
-            "titre": "Banque : Saham Bank fait sauter le verrou tarifaire et redistribue les cartes du marché",
-            "lien": "https://www.financialafrik.com/2026/04/15/banque-saham-bank-fait-sauter-le-verrou-tarifaire-et-redistribue-les-cartes-du-marche/",
-            "source": "Financial Afrik",
-            "date": "15/04/2026",
-            "resume": "<a href=\"https://www.financialafrik.com/2026/04/15/banque-saham-bank-fait-sauter-le-verrou-tarifaire-et-redistribue-les-cartes-du-marche/\"><img align=..."
-        },
-        {
-            "titre": "Fintech : Bank of Africa et Morocco Fintech Center posent les bases d’un nouveau pacte d’innovation",
-            "lien": "https://www.financialafrik.com/2026/04/15/fintech-bank-of-africa-et-morocco-fintech-center-posent-les-bases-dun-nouveau-pacte-dinnovation/",
-            "source": "Financial Afrik",
-            "date": "15/04/2026",
-            "resume": "<a href=\"https://www.financialafrik.com/2026/04/15/fintech-bank-of-africa-et-morocco-fintech-center-posent-les-bases-dun-nouveau-pacte-dinnovation/\"><..."
-        },
-        {
-            "titre": "Crédit-bail : La Société Africaine de Crédit Automobile son capital de 1,500 milliard FCFA par apport en numéraire",
-            "lien": "https://www.financialafrik.com/2026/04/15/credit-bail-la-societe-africaine-de-credit-automobile-son-capital-de-1500-milliard-fcfa-par-apport-en-numeraire/",
-            "source": "Financial Afrik",
-            "date": "15/04/2026",
-            "resume": "<a href=\"https://www.financialafrik.com/2026/04/15/credit-bail-la-societe-africaine-de-credit-automobile-son-capital-de-1500-milliard-fcfa-par-apport-..."
-        },
-        {
-            "titre": "La Guinée Bissau lève 22 milliards de FCFA sur le marché financier de l’UMOA",
-            "lien": "https://www.financialafrik.com/2026/04/15/la-guinee-bissau-leve-22-milliards-de-fcfa-sur-le-marche-financier-de-lumoa/",
-            "source": "Financial Afrik",
-            "date": "15/04/2026",
-            "resume": "<a href=\"https://www.financialafrik.com/2026/04/15/la-guinee-bissau-leve-22-milliards-de-fcfa-sur-le-marche-financier-de-lumoa/\"><img align=\"center\" a..."
-        },
-        {
-            "titre": "Ecobank TI : un bénéfice de 836 millions de dollars en 2025, tiré par les dépôts, mais avec des tensions sur le Nigeria",
-            "lien": "https://www.financialafrik.com/2026/04/15/ecobank-ti-un-benefice-de-836-millions-de-dollars-en-2025-tire-par-les-depots-mais-avec-des-tensions-sur-le-nigeria/",
-            "source": "Financial Afrik",
-            "date": "15/04/2026",
-            "resume": "<a href=\"https://www.financialafrik.com/2026/04/15/ecobank-ti-un-benefice-de-836-millions-de-dollars-en-2025-tire-par-les-depots-mais-avec-des-tension..."
-        }
-    ]
+    "articles": []
 }
