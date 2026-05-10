@@ -4,50 +4,50 @@
         "prix": "---",
         "variation": "0%",
         "conseil": "Analyse des flux financiers en cours. Prudence recommandée.",
-        "maj": "09/05/2026 09:28"
+        "maj": "10/05/2026 09:47"
     },
     "articles": [
+        {
+            "titre": "Le déficit de financement en Afrique : l’inefficacité des ressources et la structure exogène détruisent la valeur économique",
+            "lien": "https://www.financialafrik.com/2026/05/09/le-deficit-de-financement-en-afrique-linefficacite-des-ressources-et-la-structure-exogene-detruisent-la-valeur-economique/",
+            "source": "Financial Afrik",
+            "date": "10/05/2026",
+            "resume": "<a href=\"https://www.financialafrik.com/2026/05/09/le-deficit-de-financement-en-afrique-linefficacite-des-ressources-et-la-structure-exogene-detruisen..."
+        },
+        {
+            "titre": "Le Sénégal lève 29,026 milliards de FCFA sur le marché financier de l’UMOA",
+            "lien": "https://www.financialafrik.com/2026/05/09/le-senegal-leve-29026-milliards-de-fcfa-sur-le-marche-financier-de-lumoa/",
+            "source": "Financial Afrik",
+            "date": "10/05/2026",
+            "resume": "<a href=\"https://www.financialafrik.com/2026/05/09/le-senegal-leve-29026-milliards-de-fcfa-sur-le-marche-financier-de-lumoa/\"><img align=\"center\" alt=..."
+        },
         {
             "titre": "BREAKING NEWS | Burkina Faso : S&P confirme la note «CCC+/C» avec perspective stable",
             "lien": "https://www.financialafrik.com/2026/05/08/breaking-news-burkina-faso-sp-confirme-la-note-ccc-c-avec-perspective-stable/",
             "source": "Financial Afrik",
-            "date": "09/05/2026",
+            "date": "10/05/2026",
             "resume": "<a href=\"https://www.financialafrik.com/2026/05/08/breaking-news-burkina-faso-sp-confirme-la-note-ccc-c-avec-perspective-stable/\"><img align=\"center\" ..."
         },
         {
             "titre": "Hydrocarbures : TotalEnergies Marketing Sénégal versera à ses actionnaires un dividende global brut de plus de 6 milliards de FCFA en 2025",
             "lien": "https://www.financialafrik.com/2026/05/08/hydrocarbures-totalenergies-marketing-senegal-versera-a-ses-actionnaires-un-dividende-global-brut-de-plus-de-6-milliards-de-fcfa-en-2025/",
             "source": "Financial Afrik",
-            "date": "09/05/2026",
+            "date": "10/05/2026",
             "resume": "<a href=\"https://www.financialafrik.com/2026/05/08/hydrocarbures-totalenergies-marketing-senegal-versera-a-ses-actionnaires-un-dividende-global-brut-d..."
         },
         {
             "titre": "Tunisie : Le taux d’inflation atteint 5,5% au mois d’avril 2026",
             "lien": "https://www.financialafrik.com/2026/05/08/tunisie-le-taux-dinflation-atteint-55-au-mois-davril-2026/",
             "source": "Financial Afrik",
-            "date": "09/05/2026",
+            "date": "10/05/2026",
             "resume": "<a href=\"https://www.financialafrik.com/2026/05/08/tunisie-le-taux-dinflation-atteint-55-au-mois-davril-2026/\"><img align=\"center\" alt=\"Tunisie : Le t..."
         },
         {
             "titre": "Cameroun : l’Etat résilie deux contrats routiers d’environ 135 millions USD",
             "lien": "https://www.financialafrik.com/2026/05/08/cameroun-letat-resilie-deux-contrats-routiers-denviron-135-millions-usd/",
             "source": "Financial Afrik",
-            "date": "09/05/2026",
+            "date": "10/05/2026",
             "resume": "<a href=\"https://www.financialafrik.com/2026/05/08/cameroun-letat-resilie-deux-contrats-routiers-denviron-135-millions-usd/\"><img align=\"center\" alt=\"..."
-        },
-        {
-            "titre": "Afrique du Sud : la Cour constitutionnelle rouvre la voie vers le processus de destitution du président Ramaphosa",
-            "lien": "https://www.financialafrik.com/2026/05/08/afrique-du-sud-la-cour-constitutionnelle-rouvre-la-voie-vers-le-processus-de-destitution-du-president-ramaphosa/",
-            "source": "Financial Afrik",
-            "date": "09/05/2026",
-            "resume": "<a href=\"https://www.financialafrik.com/2026/05/08/afrique-du-sud-la-cour-constitutionnelle-rouvre-la-voie-vers-le-processus-de-destitution-du-preside..."
-        },
-        {
-            "titre": "Madagascar : la Banque centrale maintient son taux directeur à 12 % pour préserver la stabilité économique",
-            "lien": "https://www.financialafrik.com/2026/05/08/madagascar-la-banque-centrale-maintient-son-taux-directeur-a-12-pour-preserver-la-stabilite-economique/",
-            "source": "Financial Afrik",
-            "date": "09/05/2026",
-            "resume": "<a href=\"https://www.financialafrik.com/2026/05/08/madagascar-la-banque-centrale-maintient-son-taux-directeur-a-12-pour-preserver-la-stabilite-economi..."
         }
     ]
 }
