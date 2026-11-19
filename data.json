@@ -4,7 +4,50 @@
         "prix": "---",
         "variation": "0%",
         "conseil": "Analyse des flux financiers en cours. Prudence recommandée.",
-        "maj": "18/11/2026 17:09"
+        "maj": "19/11/2026 17:22"
     },
-    "articles": []
+    "articles": [
+        {
+            "titre": "GIM-UEMOA : 219 620 milliards de FCFA de transactions, la sécurité des paiements au cœur du 9e Salon monétique régional",
+            "lien": "https://www.financialafrik.com/2026/11/19/gim-uemoa-219-620-milliards-de-fcfa-de-transactions-la-securite-des-paiements-au-coeur-du-9e-salon-monetique-regional/",
+            "source": "Financial Afrik",
+            "date": "19/11/2026",
+            "resume": "Dakar, 19 novembre 2026. Le 9e Salon monétique régional du GIM-UEMOA s’est ouvert ce jeudi à Dakar, autour des enjeux de l’innovation, de l’interopéra..."
+        },
+        {
+            "titre": "COP31 : La Mauritanie affirme ses ambitions énergétiques et renforce sa contribution dans les efforts de lutte contre les changements climatiques",
+            "lien": "https://www.financialafrik.com/2026/11/18/cop31-la-mauritanie-affirme-ses-ambitions-energetiques-et-renforce-sa-contribution-dans-les-efforts-de-lutte-contre-les-changements-climatiques/",
+            "source": "Financial Afrik",
+            "date": "19/11/2026",
+            "resume": "À l’occasion de la COP31, organisée à Antalya, en Türkiye, le ministère mauritanien de l’Énergie et du Pétrole a pris une part active aux panels et éc..."
+        },
+        {
+            "titre": "Rwanda : Ndakaza Shema Arthur prend la direction générale d’Ascoma",
+            "lien": "https://www.financialafrik.com/2026/11/18/rwanda-ndakaza-shema-arthur-prend-la-direction-generale-dascoma/",
+            "source": "Financial Afrik",
+            "date": "19/11/2026",
+            "resume": "Le groupe de courtage en assurance Ascoma a annoncé, le 17 novembre 2026, la promotion de Ndakaza Shema Arthur à la direction générale de sa filiale r..."
+        },
+        {
+            "titre": "Maroc : les actifs des OPCVM atteignent 832,9 milliards de dirhams, en hausse de 1,83 %",
+            "lien": "https://www.financialafrik.com/2026/11/18/maroc-les-actifs-des-opcvm-atteignent-8329-milliards-de-dirhams-en-hausse-de-183/",
+            "source": "Financial Afrik",
+            "date": "19/11/2026",
+            "resume": "Au 9 novembre 2026, l’actif net des organismes de placement collectif en valeurs mobilières (OPCVM) s’établit à 832,9 milliards de dirhams (environ 85..."
+        },
+        {
+            "titre": "La Côte d’Ivoire lève 55 milliards FCFA sur le marché financier de l’UMOA",
+            "lien": "https://www.financialafrik.com/2026/11/18/la-cote-divoire-leve-55-milliards-fcfa-sur-le-marche-financier-de-lumoa-2/",
+            "source": "Financial Afrik",
+            "date": "19/11/2026",
+            "resume": "Au terme d’une émission d’adjudication simultanée de bons assimilables du trésor (BAT) de maturité 364 jours et d’obligations assimilables du trésor (..."
+        },
+        {
+            "titre": "A Lomé, la CIMA engage la révision de son traité fondateur après plus de 30 ans",
+            "lien": "https://www.financialafrik.com/2026/11/18/a-lome-la-cima-engage-la-revision-de-son-traite-fondateur-apres-plus-de-30-ans/",
+            "source": "Financial Afrik",
+            "date": "19/11/2026",
+            "resume": "Réuni depuis lundi 16 novembre 2026 à Lomé (Togo), un comité d’experts planche sur la refonte du texte qui régit les marchés de l’assurance dans les 1..."
+        }
+    ]
 }
