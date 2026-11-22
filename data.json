@@ -4,50 +4,50 @@
         "prix": "---",
         "variation": "0%",
         "conseil": "Analyse des flux financiers en cours. Prudence recommandée.",
-        "maj": "21/11/2026 16:02"
+        "maj": "22/11/2026 16:09"
     },
     "articles": [
+        {
+            "titre": "Quand le cloud s’arrête, le contrat doit prendre le relais",
+            "lien": "https://www.financialafrik.com/2026/11/22/quand-le-cloud-sarrete-le-contrat-doit-prendre-le-relais/",
+            "source": "Financial Afrik",
+            "date": "22/11/2026",
+            "resume": "Par : M. Raphaël NKOLWOUDOU AFANE, Docteur en droit (PhD), Juriste en droit du numérique et Contract Manager, TERAGONE SOLUTIONS, Paris, France. NB. C..."
+        },
+        {
+            "titre": "Banque mondiale : les PME des pays en développement privées de 4 000 milliards de dollars de financement",
+            "lien": "https://www.financialafrik.com/2026/11/22/banque-mondiale-les-pme-des-pays-en-developpement-privees-de-4-000-milliards-de-dollars-de-financement/",
+            "source": "Financial Afrik",
+            "date": "22/11/2026",
+            "resume": "Les micro, petites et moyennes entreprises (MPME) des économies émergentes et en développement accusent un déficit de financement estimé à 4 000 milli..."
+        },
+        {
+            "titre": "Sénégal 2027 : quand la crise budgétaire rencontre le mur du financement",
+            "lien": "https://www.financialafrik.com/2026/11/21/senegal-2027-quand-la-crise-budgetaire-rencontre-le-mur-du-financement/",
+            "source": "Financial Afrik",
+            "date": "22/11/2026",
+            "resume": "Par Dr. Lansana Gagny SAKHO Le rejet du projet de loi de finances initiale 2027 par l’Assemblée nationale, le 18 novembre 2026, n’est pas un épisode p..."
+        },
         {
             "titre": "« Donner aux agriculteurs mauritaniens leur propre banque »",
             "lien": "https://www.financialafrik.com/2026/11/21/donner-aux-agriculteurs-mauritaniens-leur-propre-banque/",
             "source": "Financial Afrik",
-            "date": "21/11/2026",
+            "date": "22/11/2026",
             "resume": "Entretien avec Ahmed Khattry, candidat à la présidence de la Fédération Nationale d’Agriculture (FNA) (1 USD = 40,69 MRU ) Trente ans de finance islam..."
         },
         {
             "titre": "Succession chez Castel : la Haute Cour de Singapour valide l’éviction des dirigeants d’IBBM",
             "lien": "https://www.financialafrik.com/2026/11/21/succession-chez-castel-la-haute-cour-de-singapour-valide-leviction-des-dirigeants-dibbm/",
             "source": "Financial Afrik",
-            "date": "21/11/2026",
+            "date": "22/11/2026",
             "resume": "Tournant judiciaire majeur dans la guerre de succession à la tête du groupe Castel : dans les attendus publiés le 20 novembre 2026 dont Financial Afri..."
         },
         {
             "titre": "Emploi des cadres en Afrique : trop de financiers, pénurie de commerciaux et de dirigeants",
             "lien": "https://www.financialafrik.com/2026/11/21/emploi-des-cadres-en-afrique-trop-de-financiers-penurie-de-commerciaux-et-de-dirigeants/",
             "source": "Financial Afrik",
-            "date": "21/11/2026",
+            "date": "22/11/2026",
             "resume": "Le marché africain du recrutement des cadres connaît une profonde recomposition. Selon le Baromètre T2A 2026 de Talent2Africa, présenté le 19 novembre..."
-        },
-        {
-            "titre": "Sénégal : 55 milliards de FCFA levés à des taux plus chers que la Côte d’Ivoire",
-            "lien": "https://www.financialafrik.com/2026/11/21/senegal-55-milliards-de-fcfa-leves-a-des-taux-plus-chers-que-la-cote-divoire/",
-            "source": "Financial Afrik",
-            "date": "21/11/2026",
-            "resume": "Le Sénégal continue de mobiliser des ressources sur le marché régional des titres publics, mais à des conditions financières sensiblement moins favora..."
-        },
-        {
-            "titre": "Guide pratique : où et comment souscrire à l’OPV de Coris Bank Côte d’Ivoire ?",
-            "lien": "https://www.financialafrik.com/2026/11/21/guide-pratique-ou-et-comment-souscrire-a-lopv-de-coris-bank-cote-divoire/",
-            "source": "Financial Afrik",
-            "date": "21/11/2026",
-            "resume": "Du 30 novembre au 4 décembre 2026, Coris Bank International Côte d’Ivoire ouvre 20 % de son capital aux investisseurs à travers une offre publique de ..."
-        },
-        {
-            "titre": "Côte d’Ivoire: le Saint Joseph Innoplaza Center, un complexe mixte de 13 milliards de FCFA pour redessiner le paysage urbain du Plateau",
-            "lien": "https://www.financialafrik.com/2026/11/21/cote-divoire-le-saint-joseph-innoplaza-center-un-complexe-mixte-de-13-milliards-de-fcfa-pour-redessiner-le-paysage-urbain-du-plateau/",
-            "source": "Financial Afrik",
-            "date": "21/11/2026",
-            "resume": "C’est un investissement de 13 milliards de FCFA qui sera mobilisé pour la réalisation du projet Saint Joseph Innoplaza Center. Le 18 novembre 2026, à ..."
         }
     ]
 }
