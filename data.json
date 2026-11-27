@@ -4,50 +4,7 @@
         "prix": "---",
         "variation": "0%",
         "conseil": "Analyse des flux financiers en cours. Prudence recommandée.",
-        "maj": "26/11/2026 18:19"
+        "maj": "27/11/2026 18:02"
     },
-    "articles": [
-        {
-            "titre": "BVMAC : Renaprov Finance entre en Bourse le 1er décembre 2026",
-            "lien": "https://www.financialafrik.com/2026/11/26/bvmac-renaprov-finance-entre-en-bourse-le-1er-decembre-2026/",
-            "source": "Financial Afrik",
-            "date": "26/11/2026",
-            "resume": "Renaprov Finance fera ses premiers pas en Bourse le 1er décembre 2026. L’annonce a été faite par la Bourse des valeurs mobilières de l’Afrique central..."
-        },
-        {
-            "titre": "Tunisie : le CGA lance un portail numérique pour les demandes d’agrément des intermédiaires d’assurance",
-            "lien": "https://www.financialafrik.com/2026/11/26/tunisie-le-cga-lance-un-portail-numerique-pour-les-demandes-dagrement-des-intermediaires-dassurance/",
-            "source": "Financial Afrik",
-            "date": "26/11/2026",
-            "resume": "Le Comité général des assurances (CGA) de Tunisie a lancé, le 25 novembre 2026, CGAgréments, une plateforme numérique dédiée à la gestion des demandes..."
-        },
-        {
-            "titre": "Égypte : le régulateur autorise les polices d’assurance en langues étrangères pour les opérations internationales",
-            "lien": "https://www.financialafrik.com/2026/11/26/egypte-le-regulateur-autorise-les-polices-dassurance-en-langues-etrangeres-pour-les-operations-internationales/",
-            "source": "Financial Afrik",
-            "date": "26/11/2026",
-            "resume": "L’Autorité de régulation financière (FRA) égyptienne a autorisé les compagnies d’assurance à émettre des polices en langues étrangères dans le cadre d..."
-        },
-        {
-            "titre": "Sénégal : la BRM obtient une condamnation de 6,83 milliards de FCFA contre KF SARL",
-            "lien": "https://www.financialafrik.com/2026/11/26/senegal-la-brm-obtient-une-condamnation-de-683-milliards-de-fcfa-contre-kf-sarl/",
-            "source": "Financial Afrik",
-            "date": "26/11/2026",
-            "resume": "La Banque régionale des marchés (BRM) a obtenu gain de cause en première instance dans le contentieux commercial qui l&#8217;a opposé à KF Sénégal SAR..."
-        },
-        {
-            "titre": "Banques : Hausse de 10,3% du bénéfice consolidé du Groupe Attijariwafa Bank au troisième trimestre 2026",
-            "lien": "https://www.financialafrik.com/2026/11/26/banques-hausse-de-103-du-benefice-consolide-du-groupe-attijariwafa-bank-au-troisieme-trimestre-2026/",
-            "source": "Financial Afrik",
-            "date": "26/11/2026",
-            "resume": "Le bénéfice consolidé du groupe Attijariwafa Bank, présent dans 26 pays en Afrique, en Europe et au Moyen Orient, a enregistré une hausse de 10,3% au ..."
-        },
-        {
-            "titre": "Mali : Le Trésor Public encaisse 53,162 milliards de FCFA au niveau du marché financier de l’UMOA",
-            "lien": "https://www.financialafrik.com/2026/11/26/mali-le-tresor-public-encaisse-53162-milliards-de-fcfa-au-niveau-du-marche-financier-de-lumoa/",
-            "source": "Financial Afrik",
-            "date": "26/11/2026",
-            "resume": "Dans le but d&#039;assurer la couverture des besoins de financement du budget de l&#039;Etat Malien, la Direction Générale du Trésor et de la Comptabi..."
-        }
-    ]
+    "articles": []
 }
